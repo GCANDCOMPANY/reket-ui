@@ -2,3 +2,4 @@
 export { default as SubmitButton } from './SubmitButton';
 export { default as Pagination } from './Pagination';
 export { default as StyledButton } from './StyledButton';
+export { default as BaseButton } from './BaseButton';
