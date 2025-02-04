@@ -10,6 +10,8 @@ const makePxToRem = (num) => ({
 });
 
 /** @type {import('tailwindcss').Config} */
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 export default {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
@@ -19,6 +21,7 @@ export default {
       white: colors.white,
       black: colors.black,
       transparent: 'transparent',
+      dark: colors.dark,
       gray: colors.gray,
       red: colors.red,
       pink: colors.pink,
