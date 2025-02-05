@@ -1,17 +1,34 @@
 export default {
+  // Reket Color System
   primary: '#000000',
   secondary: '#252525',
-  white: '#FFFFFF',
+  white: '#ffffff',
   black: '#000000',
   transparent: 'transparent',
-  lightPurple: '#6D48F0',
-  purple: 'rgb(85, 51, 207)',
+  purple: {
+    base: '#6741d9',
+    light: '#7950f2',
+    pastel: '#e5dbff',
+  },
   hotPink: '#F53586',
-  facebook: 'rgb(25, 119, 243)',
-  naver: 'rgb(0, 199, 60)',
-  kakao: 'rgb(249, 224, 0)',
+  facebook: '#1977f3',
+  naver: '#00c73c',
+  kakao: '#f9e000',
   kakaoFont: 'rgb(49, 49, 49)',
 
+  // Mantine Color System
+  dark: {
+    0: '#C1C2C5',
+    1: '#A6A7AB',
+    2: '#909296',
+    3: '#5C5F66',
+    4: '#373A40',
+    5: '#2C2E33',
+    6: '#25262B',
+    7: '#1A1B1E',
+    8: '#141517',
+    9: '#101113',
+  },
   gray: {
     0: '#f8f9fa',
     1: '#f1f1f1',
@@ -24,7 +41,6 @@ export default {
     8: '#343a40',
     9: '#212529',
   },
-
   red: {
     0: '#fff5f5',
     1: '#ffe3e3',
@@ -37,7 +53,6 @@ export default {
     8: '#e03131',
     9: '#c92a2a',
   },
-
   pink: {
     0: '#fff0f6',
     1: '#ffdeeb',
@@ -50,7 +65,6 @@ export default {
     8: '#c2255c',
     9: '#a61e4d',
   },
-
   grape: {
     0: '#f8f0fc',
     1: '#f3d9fa',
@@ -63,7 +77,6 @@ export default {
     8: '#9c36b5',
     9: '#862e9c',
   },
-
   violet: {
     0: '#f3f0ff',
     1: '#e5dbff',
@@ -76,7 +89,6 @@ export default {
     8: '#6741d9',
     9: '#5f3dc4',
   },
-
   indigo: {
     0: '#edf2ff',
     1: '#dbe4ff',
@@ -89,7 +101,6 @@ export default {
     8: '#3b5bdb',
     9: '#364fc7',
   },
-
   blue: {
     0: '#e7f5ff',
     1: '#d0ebff',
@@ -102,7 +113,6 @@ export default {
     8: '#1971c2',
     9: '#1864ab',
   },
-
   cyan: {
     0: '#e3fafc',
     1: '#c5f6fa',
@@ -115,7 +125,6 @@ export default {
     8: '#0c8599',
     9: '#0b7285',
   },
-
   teal: {
     0: '#e6fcf5',
     1: '#c3fae8',
@@ -128,7 +137,6 @@ export default {
     8: '#099268',
     9: '#087f5b',
   },
-
   green: {
     0: '#ebfbee',
     1: '#d3f9d8',
@@ -141,7 +149,6 @@ export default {
     8: '#2f9e44',
     9: '#2b8a3e',
   },
-
   lime: {
     0: '#f4fce3',
     1: '#e9fac8',
@@ -154,7 +161,6 @@ export default {
     8: '#66a80f',
     9: '#5c940d',
   },
-
   yellow: {
     0: '#fff9db',
     1: '#fff3bf',
@@ -167,7 +173,6 @@ export default {
     8: '#f08c00',
     9: '#e67700',
   },
-
   orange: {
     0: '#fff4e6',
     1: '#ffe8cc',
