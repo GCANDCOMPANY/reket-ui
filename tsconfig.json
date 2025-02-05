@@ -10,8 +10,7 @@
     "allowJs": true, // JS 허용
     "strict": true, // strict mode
     "typeRoots": ["./src/types", "./node_modules/@types"], // 보통 types 폴더를 만들어 타입 정의
-    // "declaration": true, // lib 만들 때 .d.ts 파일을 자동으로
-    // "declarationDir": "./types", // 이 폴더에 만들어주는 옵션
+    "declaration": true, // lib 만들 때 .d.ts 파일을 자동으로
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -21,7 +20,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": false,
+    "noEmit": false, // tsc를 컴파일용으로 사용하기 위함
     "jsx": "react-jsx",
     "outDir": "./dist", // 컴파일된 js 파일을 저장할 위치
   },
