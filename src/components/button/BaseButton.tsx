@@ -1,5 +1,5 @@
 import React from 'react';
-import { mergeStyle } from '../../utils/style';
+import { mergeStyle } from '../../utils/style.js';
 
 interface Props {
   text?: string;

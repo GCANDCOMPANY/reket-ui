@@ -1,1 +1,3 @@
-export * from './button';
+'use client';
+
+export * from './button/index.js';

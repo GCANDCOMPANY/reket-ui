@@ -1,5 +1,5 @@
 import React from 'react';
-import BaseButton from './components/button/BaseButton';
+import BaseButton from './components/button/BaseButton.js';
 
 const App = () => {
   return (
