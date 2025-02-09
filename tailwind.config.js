@@ -13,7 +13,7 @@ const makePxToRem = (num) => ({
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 export default {
-  content: ['./src/**/*.{js,jsx,ts,tsx}', './node_modules/@reket/ui/**/*.{js,jsx,ts,tsx}'],
+  content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     colors: {
       primary: '#000',

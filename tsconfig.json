@@ -1,32 +1,27 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "experimentalDecorators": true, // 데코레이터 허용
-    "baseUrl": ".",
-    "paths": {
-      "*": ["*"]
-    },
-    "allowJs": true, // JS 허용
-    "strict": true, // strict mode
-    "typeRoots": ["./src/types", "./node_modules/@types"], // 보통 types 폴더를 만들어 타입 정의
-    "declaration": true, // lib 만들 때 .d.ts 파일을 자동으로
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
     "skipLibCheck": true,
-    "esModuleInterop": true,
+
+    /* Bundler mode */
+    "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    // "module": "esnext",
-    // "moduleResolution": "node",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": false, // tsc를 컴파일용으로 사용하기 위함
+    "noEmit": true,
     "jsx": "react-jsx",
-    // "rootDir": "src",
-    "outDir": "dist" // 컴파일된 js 파일을 저장할 위치
+    "declaration": true,
+    "typeRoots": ["./dist/index.d.ts"],
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
   },
-  "include": ["."], // 컴파일할 파일
-  "exclude": ["node_modules", "dist"]
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

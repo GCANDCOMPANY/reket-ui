@@ -1,5 +1,7 @@
+'use client';
+
 import React from 'react';
-import { mergeStyle } from '../../utils/style.js';
+// import { mergeStyle } from '../utils/style.js';
 
 interface Props {
   text?: string;
@@ -8,26 +10,27 @@ interface Props {
   size?: 'xs' | 's' | 'm' | 'l' | 'xl';
   width?: 'block' | 'inline';
   onClick?: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void;
-  className?: string;
+  // className?: string;
 }
 
-const BaseButton = ({
+const Button = ({
   text = '',
   option = 'filled',
   color = 'dark',
   size = 's',
   width = 'inline',
   onClick,
-  className = '', // for custom className
+  // className = '', // for custom className
 }: Props): JSX.Element => {
-  const classes = mergeStyle(
-    `${BASE_STYLE} ${SIZE_STYLE[size]} ${WIDTH_STYLE[width]} ${OPTION_STYLE[color][option]}`,
-    className,
-  );
+  // const classes = mergeStyle(
+  //   `${BASE_STYLE} ${SIZE_STYLE[size]} ${WIDTH_STYLE[width]} ${OPTION_STYLE[color][option]}`,
+  //   className,
+  // );
 
   return (
     <button
-      className={classes}
+      // className={classes}
+      className={`${BASE_STYLE} ${SIZE_STYLE[size]} ${WIDTH_STYLE[width]} ${OPTION_STYLE[color][option]}`}
       onClick={(e) => {
         if (onClick) onClick(e);
       }}
@@ -37,7 +40,7 @@ const BaseButton = ({
   );
 };
 
-export default BaseButton;
+export default Button;
 
 const BASE_STYLE = 'cursor-pointer whitespace-nowrap tracking-tight rounded';
 const SIZE_STYLE = {

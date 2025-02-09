@@ -1,2 +1,2 @@
 // eslint-disable-next-line import/prefer-default-export
-export { default as BaseButton } from './BaseButton.js';
+export { default as style } from './style.js';
