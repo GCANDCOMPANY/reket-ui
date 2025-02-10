@@ -23,5 +23,4 @@ yarn-debug.log*
 yarn-error.log*
 
 # test file
-/src/App.tsx
 /src/index.css
