@@ -1,1 +1,5 @@
+# dependencies
 node_modules/
+
+# test file
+/src/App.tsx
