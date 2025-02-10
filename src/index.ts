@@ -1,14 +1,5 @@
-// import React from 'react';
-// import { createRoot } from 'react-dom/client';
-// import App from './App';
-// import './styles/globals.scss';
+import './index.css';
+import Button from './components/Button';
 
-// const container = document.getElementById('root');
-// if (container)
-//   createRoot(container).render(
-//     <React.StrictMode>
-//       <App />
-//     </React.StrictMode>,
-//   );
-
-export * from './components';
+// eslint-disable-next-line import/prefer-default-export
+export { Button };

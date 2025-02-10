@@ -1,5 +1,7 @@
+'use client';
+
 import React from 'react';
-import { mergeStyle } from '../../utils/style';
+import { mergeStyle } from '../utils/style.js';
 
 interface Props {
   text?: string;
@@ -11,7 +13,7 @@ interface Props {
   className?: string;
 }
 
-const BaseButton = ({
+const Button = ({
   text = '',
   option = 'filled',
   color = 'dark',
@@ -37,7 +39,7 @@ const BaseButton = ({
   );
 };
 
-export default BaseButton;
+export default Button;
 
 const BASE_STYLE = 'cursor-pointer whitespace-nowrap tracking-tight rounded';
 const SIZE_STYLE = {
@@ -47,25 +49,22 @@ const SIZE_STYLE = {
   l: 'px-[16px] h-[44px] text-[16px] font-medium',
   xl: 'px-[16px] h-[48px] text-[18px] font-medium',
 };
-const WIDTH_STYLE = {
-  block: 'w-full',
-  inline: '',
-};
+const WIDTH_STYLE = { block: 'w-full', inline: '' };
 const OPTION_STYLE = {
   dark: {
     filled: 'text-white bg-dark-6 hover:bg-dark-8',
-    outline: 'text-dark-6 border-[1px] border-dark-6 bg-white hover:bg-dark-1',
+    outline: 'text-dark-6 border border-dark-6 bg-white hover:bg-dark-1',
   },
   purple: {
     filled: 'text-white bg-violet-6 hover:bg-violet-9',
-    outline: 'text-violet-6 border-[1px] border-violet-6 bg-white hover:bg-violet-1',
+    outline: 'text-violet-6 border-1 border-violet-6 bg-white hover:bg-violet-1',
   },
   red: {
     filled: 'text-white bg-red-6 hover:bg-red-8',
-    outline: 'text-red-6 border-[1px] border-red-6 bg-white hover:bg-red-1',
+    outline: 'text-red-6 border border-red-6 bg-white hover:bg-red-1',
   },
   gray: {
     filled: 'text-white bg-gray-6 hover:bg-gray-8',
-    outline: 'text-black border-[1px] border-gray-6 bg-white hover:bg-gray-1',
+    outline: 'text-black border border-gray-6 bg-white hover:bg-gray-1',
   },
 };

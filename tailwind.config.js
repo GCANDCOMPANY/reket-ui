@@ -2,10 +2,7 @@ import { colors } from './src/constants';
 
 const makePxToRem = (num) => ({
   ...Array.from(Array(num + 1)).reduce((acc, cur, i) => {
-    return {
-      ...acc,
-      [i]: `${(i / 16).toFixed(3)}rem`,
-    };
+    return { ...acc, [i]: `${(i / 16).toFixed(3)}rem` };
   }, {}),
 });
 
@@ -13,7 +10,7 @@ const makePxToRem = (num) => ({
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 export default {
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  content: ['./src/**/*.{js,ts,jsx,tsx}', './node_modules/@reket/ui/**/*.{js,ts,jsx,tsx}'],
   theme: {
     colors: {
       primary: '#000',
@@ -36,9 +33,7 @@ export default {
       yellow: colors.yellow,
       orange: colors.orange,
     },
-    fontFamily: {
-      pretendard: ['Pretendard'],
-    },
+    fontFamily: { pretendard: ['Pretendard'] },
     extend: {
       borderWidth: makePxToRem(10), // px 단위로 작성하면 rem 단위로 바꿔주는 기능
       fontSize: makePxToRem(64), // text-16 이런식으로 쓰면 rem 단위로 바꿔서 적용됨 -> font-size: 1rem/* 16px */;
@@ -51,9 +46,7 @@ export default {
         165: '165%',
         180: '180%',
       },
-      dropShadow: {
-        bottom: '0 5px 2.5px rgba(0, 0, 0, 0.15)',
-      },
+      dropShadow: { bottom: '0 5px 2.5px rgba(0, 0, 0, 0.15)' },
       spacing: makePxToRem(200),
       minWidth: makePxToRem(375),
       maxWidth: makePxToRem(375),
@@ -63,39 +56,12 @@ export default {
     },
     keyframes: {
       'fadein-down': {
-        from: {
-          transform: 'translateY(-48px);',
-          opacity: 0,
-        },
-        to: {
-          transform: 'translateY(0);',
-          opacity: 1,
-        },
+        from: { transform: 'translateY(-48px);', opacity: 0 },
+        to: { transform: 'translateY(0);', opacity: 1 },
       },
-      fadein: {
-        from: {
-          opacity: 0,
-        },
-        to: {
-          opacity: 1,
-        },
-      },
-      fadeout: {
-        from: {
-          opacity: 1,
-        },
-        to: {
-          opacity: 0,
-        },
-      },
-      spin: {
-        from: {
-          transform: 'rotate(0deg)',
-        },
-        to: {
-          transform: 'rotate(360deg)',
-        },
-      },
+      fadein: { from: { opacity: 0 }, to: { opacity: 1 } },
+      fadeout: { from: { opacity: 1 }, to: { opacity: 0 } },
+      spin: { from: { transform: 'rotate(0deg)' }, to: { transform: 'rotate(360deg)' } },
     },
     animation: {
       'fadein-down': 'fadein-down 0.3s',
@@ -112,23 +78,15 @@ export default {
       // 하지만 tailwind 문법을 쓰면 intellisense 에서 가독성이 매우 떨어지므로 가능하면 css style 을 더 우선적으로 작성
       // utility 는 어디든지 다 갖다 붙일 수 있는 스타일을 작성하고 component 는 말그대로 캘린더, 모달, 드롭다운 이런 컴포넌트 단위로 적용할때 작성
       addUtilities({
-        '.flex-center': {
-          display: 'flex',
-          'justify-content': 'center',
-          'align-items': 'center',
-        },
+        '.flex-center': { display: 'flex', 'justify-content': 'center', 'align-items': 'center' },
         /* Chrome, Safari and Opera */
-        '.no-scrollbar-x::-webkit-scrollbar': {
-          display: 'none',
-        },
+        '.no-scrollbar-x::-webkit-scrollbar': { display: 'none' },
         '.no-scrollbar-x': {
           'overflow-x': 'auto',
           '-ms-overflow-style': 'none' /* IE and Edge */,
           'scrollbar-width': 'none' /* Firefox */,
         },
-        '.no-scrollbar-y::-webkit-scrollbar': {
-          display: 'none',
-        },
+        '.no-scrollbar-y::-webkit-scrollbar': { display: 'none' },
         '.no-scrollbar-y': {
           'overflow-y': 'auto',
           '-ms-overflow-style': 'none' /* IE and Edge */,
