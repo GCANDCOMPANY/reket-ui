@@ -1,4 +1,4 @@
-import './index.css';
+import './styles/globals.scss';
 import Button from './components/Button';
 
 // eslint-disable-next-line import/prefer-default-export

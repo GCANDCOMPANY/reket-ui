@@ -15,7 +15,7 @@
   "keywords": [
     "react",
     "design system",
-    "ui-library",
+    "ui library",
     "components"
   ],
   "exports": {
@@ -27,9 +27,8 @@
   },
   "scripts": {
     "dev": "vite",
-    "build:test": "rm -rf reket-ui-v$npm_package_version.tgz dist && yarn build && yarn pack",
-    "build:css": "rm -rf src/index.css && postcss src/styles/globals.scss -o src/index.css",
-    "build": "tsc && yarn build:css && vite build"
+    "build:test": "yarn build && yarn pack",
+    "build": "rm -rf dist && tsc && vite build"
   },
   "dependencies": {
     "dayjs": "^1.11.10",
