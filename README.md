@@ -26,8 +26,6 @@ const YourComponent = () => {
 };
 ```
 
-<br />
-
 ### `<Button />` Props
 
 | **Prop**    | **Type**                                                 | **Default** |
