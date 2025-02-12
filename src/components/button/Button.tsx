@@ -1,7 +1,5 @@
-'use client';
-
 import React from 'react';
-import { mergeStyle } from '../utils/style.js';
+import { mergeStyle } from '../../utils/style';
 
 interface Props {
   text?: string;

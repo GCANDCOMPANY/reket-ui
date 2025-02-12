@@ -1,5 +1,4 @@
 import './styles/globals.scss';
-import Button from './components/Button';
 
-// eslint-disable-next-line import/prefer-default-export
-export { Button };
+export * from './components/button';
+export * from './components/input';
