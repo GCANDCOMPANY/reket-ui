@@ -19,6 +19,7 @@ const Button = ({
   display = 'inline',
   onClick,
   className = '',
+  ...props
 }: Props): JSX.Element => {
   const classes = mergeStyle(
     `${BASE_STYLE} ${SIZE_STYLE[size]} ${DISPLAY_STYLE[display]} ${OPTION_STYLE[color][option]}`,
@@ -31,6 +32,7 @@ const Button = ({
       onClick={(e) => {
         if (onClick) onClick(e);
       }}
+      {...props}
     >
       {text}
     </button>
