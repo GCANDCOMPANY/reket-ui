@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { mergeStyle } from '../../../utils/style';
+import { mergeStyle } from '../../utils/style';
 
 interface ModalProps {
   isOpen?: boolean;
@@ -10,6 +10,7 @@ interface ModalProps {
   className?: string;
 }
 
+// TODO: max-width랑 max-height 설정 필요. 지금은 children 넣는대로 w,h 제멋대로 조절됨
 const Modal = ({
   isOpen,
   children,
@@ -18,6 +19,7 @@ const Modal = ({
   className,
 }: ModalProps): JSX.Element | null => {
   const [isDomReady, setIsDomReady] = useState(false);
+
   useEffect(() => {
     setIsDomReady(false);
     const portalRoot = document.createElement('div');
@@ -50,7 +52,7 @@ const Modal = ({
             {children}
           </div>
           {backdrop ? (
-            <div className="bg-slate-200 h-full w-full bg-black bg-opacity-20" onClick={onClose} />
+            <div className="h-full w-full bg-black bg-opacity-20" onClick={onClose} />
           ) : null}
         </div>,
         document.getElementById('portal-root') as HTMLElement,
