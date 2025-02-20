@@ -1,15 +1,5 @@
 import { useReducer } from 'react';
-import { AlertInterface } from '../types/app';
-
-interface ActionInterface {
-  type: 'UPDATE_ALERT' | 'UPDATE_TOAST';
-  payload: StateInterface;
-}
-
-export interface StateInterface {
-  alert: AlertInterface;
-  toast: any;
-}
+import { AlertInterface, StateInterface, ActionInterface } from '../types/app';
 
 export const initialState: StateInterface = {
   alert: {

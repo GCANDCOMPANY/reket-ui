@@ -1,7 +1,8 @@
 import { createContext, useContext } from 'react';
 import { Alert, Toast } from './components/dialog';
 import { AlertInterface } from './types/app';
-import { initialState, useStore, StateInterface } from './hooks/useStore';
+import { StateInterface } from './types/app';
+import { initialState, useStore } from './hooks/useStore';
 
 interface UIContextInterface {
   state: StateInterface;

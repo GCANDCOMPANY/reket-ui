@@ -8,3 +8,13 @@ export interface AlertInterface {
   onOk?: () => void;
   onCancel?: () => void;
 }
+
+export interface StateInterface {
+  alert: AlertInterface;
+  toast: any;
+}
+
+interface ActionInterface {
+  type: 'UPDATE_ALERT' | 'UPDATE_TOAST';
+  payload: StateInterface;
+}
