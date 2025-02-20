@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { IoAlertCircleOutline } from '@react-icons/all-files/io5/IoAlertCircleOutline';
-import { useUIContext } from '../../UIProvider';
-import { Button } from '../button';
+
+import { useUIContext } from '../../../UIProvider';
+import { Button } from '../../button';
+import Icon from './Icon';
 
 const Alert = () => {
   const { state, updateAlertState } = useUIContext();
@@ -37,9 +38,7 @@ const Alert = () => {
           />
           <div className="fixed left-[50%] top-[12%] z-40 min-w-[356px] max-w-[448px] translate-x-[-50%] transform animate-fadein rounded-lg border-1 border-[#f1f1f1] bg-white p-24 shadow">
             <div className="mb-32 flex-center">
-              {type === 'warn' && (
-                <IoAlertCircleOutline className="shrink-0 text-48 text-yellow-6" />
-              )}
+              <Icon type={type} />
               <div className="ml-24 flex-1 rounded">
                 <p className="mb-8 text-18 font-semibold max-md:text-16">{title}</p>
                 <p className="whitespace-pre-line max-md:text-14">{content}</p>
