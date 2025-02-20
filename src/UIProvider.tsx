@@ -1,57 +1,58 @@
-import { createContext, useState } from 'react';
+import { createContext, useContext, useReducer } from 'react';
 import { Alert } from './components/dialog';
+import { AlertInterface } from './types/app';
 
-interface Props {
+interface ActionType {
+  type: 'UPDATE_ALERT';
+  payload: AlertInterface;
+}
+
+interface UIContextInterface {
+  state: AlertInterface;
+  updateAlertState: (alertState: AlertInterface) => void;
+}
+
+interface UIProviderProps {
   children: JSX.Element;
 }
 
-interface AlertState {
-  isOpen: boolean;
-  type: string;
-  onCancel: () => void;
-  onOk: () => void;
-  title: string;
-  content: string;
-}
+const initialState: AlertInterface = {
+  title: '',
+  content: '',
+  type: 'confirm',
+  isOpen: false,
+};
 
-export const UIContext = createContext({
-  alertState: {
-    isOpen: false,
-    type: 'confirm',
-    onCancel: () => {},
-    onOk: () => {},
-    title: '',
-    content: '',
-  },
-  changeAlertState: ({}: AlertState) => {},
+const reducer = (state: AlertInterface, action: ActionType) => {
+  switch (action.type) {
+    case 'UPDATE_ALERT':
+      return {
+        ...state,
+        ...action.payload,
+      };
+    default:
+      return state;
+  }
+};
+
+export const UIContext = createContext<UIContextInterface>({
+  state: initialState,
+  updateAlertState: () => {},
 });
 
-export const UIProvider = ({ children }: Props): JSX.Element => {
-  const [alertState, setAlertState] = useState<AlertState>({
-    isOpen: false,
-    type: 'confirm',
-    onCancel: () => {},
-    onOk: () => {},
-    title: '',
-    content: '',
-  });
+export const UIProvider = ({ children }: UIProviderProps): JSX.Element => {
+  const [state, dispatch] = useReducer(reducer, initialState);
 
-  const changeAlertState = ({ isOpen, type, onCancel, onOk, title, content }: AlertState) => {
-    setAlertState((prev) => ({
-      ...prev,
-      isOpen,
-      type,
-      onCancel,
-      onOk,
-      title,
-      content,
-    }));
+  const updateAlertState = (state: AlertInterface) => {
+    dispatch({ type: 'UPDATE_ALERT', payload: state });
   };
 
   return (
-    <UIContext.Provider value={{ alertState, changeAlertState }}>
+    <UIContext.Provider value={{ state, updateAlertState }}>
       {children}
       <Alert />
     </UIContext.Provider>
   );
 };
+
+export const useUIContext = () => useContext(UIContext);

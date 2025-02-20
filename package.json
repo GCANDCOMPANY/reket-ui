@@ -31,6 +31,7 @@
     "build": "rm -rf dist && tsc && vite build"
   },
   "dependencies": {
+    "@react-icons/all-files": "^4.1.0",
     "dayjs": "^1.11.10",
     "lodash": "^4.17.21",
     "sass": "^1.84.0",

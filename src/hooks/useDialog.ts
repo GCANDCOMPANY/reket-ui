@@ -1,28 +1,12 @@
-import { useContext } from 'react';
-import { UIContext } from '../UIProvider';
-
-interface AlertState {
-  isOpen: boolean;
-  type: string;
-  onCancel?: () => void;
-  onOk?: () => void;
-  title?: string;
-  content?: string;
-}
+import { useUIContext } from '../UIProvider';
+import { AlertInterface } from '../types/app';
 
 const useDialog = () => {
-  const { changeAlertState } = useContext(UIContext);
+  const { updateAlertState } = useUIContext();
 
-  const alert = ({
-    isOpen = true,
-    type,
-    onCancel = () => {},
-    onOk = () => {},
-    title = '',
-    content = '',
-  }: AlertState) => {
-    changeAlertState({
-      isOpen,
+  const alert = ({ type = 'confirm', onCancel, onOk, title = '', content }: AlertInterface) => {
+    updateAlertState({
+      isOpen: true,
       type,
       onCancel,
       onOk,
