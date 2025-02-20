@@ -21,7 +21,7 @@ export const initialState: StateInterface = {
   toast: {},
 };
 
-export const useUIState = () => {
+export const useStore = () => {
   const [state, dispatch] = useReducer((state: StateInterface, action: ActionInterface) => {
     switch (action.type) {
       case 'UPDATE_ALERT':

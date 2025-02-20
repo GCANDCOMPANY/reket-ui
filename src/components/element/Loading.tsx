@@ -18,7 +18,7 @@ const Loading = ({
   const overlayStyle = overlay
     ? 'fixed left-0 top-0 z-20 h-screen w-screen bg-black bg-opacity-10 flex justify-center items-center'
     : '';
-  const spinnerClass = mergeStyle('animate-spin text-gray-6', className);
+  const spinnerClass = mergeStyle('animate-spin text-gray-5', className);
 
   return isLoading ? (
     <div className={overlayStyle} {...props}>

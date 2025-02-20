@@ -1,7 +1,7 @@
 import { createContext, useContext } from 'react';
 import { Alert, Toast } from './components/dialog';
 import { AlertInterface } from './types/app';
-import { initialState, useUIState, StateInterface } from './hooks/useUIState';
+import { initialState, useStore, StateInterface } from './hooks/useStore';
 
 interface UIContextInterface {
   state: StateInterface;
@@ -16,7 +16,7 @@ const UIContext = createContext<UIContextInterface>({
 });
 
 export const UIProvider = ({ children }: { children: JSX.Element }): JSX.Element => {
-  const { state, updateAlertState, updateToastState } = useUIState();
+  const { state, updateAlertState, updateToastState } = useStore();
 
   return (
     <UIContext.Provider value={{ state, updateAlertState, updateToastState }}>
