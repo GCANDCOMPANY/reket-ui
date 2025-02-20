@@ -15,8 +15,11 @@ const useDialog = () => {
     });
   };
 
+  const toast = () => {};
+
   return {
     alert,
+    toast,
   };
 };
 

@@ -1,56 +1,28 @@
-import { createContext, useContext, useReducer } from 'react';
-import { Alert } from './components/dialog';
+import { createContext, useContext } from 'react';
+import { Alert, Toast } from './components/dialog';
 import { AlertInterface } from './types/app';
-
-interface ActionType {
-  type: 'UPDATE_ALERT';
-  payload: AlertInterface;
-}
+import { initialState, useUIState, StateInterface } from './hooks/useUIState';
 
 interface UIContextInterface {
-  state: AlertInterface;
+  state: StateInterface;
   updateAlertState: (alertState: AlertInterface) => void;
+  updateToastState: (toastState: any) => void;
 }
 
-interface UIProviderProps {
-  children: JSX.Element;
-}
-
-const initialState: AlertInterface = {
-  title: '',
-  content: '',
-  type: 'confirm',
-  isOpen: false,
-};
-
-const reducer = (state: AlertInterface, action: ActionType) => {
-  switch (action.type) {
-    case 'UPDATE_ALERT':
-      return {
-        ...state,
-        ...action.payload,
-      };
-    default:
-      return state;
-  }
-};
-
-export const UIContext = createContext<UIContextInterface>({
+const UIContext = createContext<UIContextInterface>({
   state: initialState,
   updateAlertState: () => {},
+  updateToastState: () => {},
 });
 
-export const UIProvider = ({ children }: UIProviderProps): JSX.Element => {
-  const [state, dispatch] = useReducer(reducer, initialState);
-
-  const updateAlertState = (state: AlertInterface) => {
-    dispatch({ type: 'UPDATE_ALERT', payload: state });
-  };
+export const UIProvider = ({ children }: { children: JSX.Element }): JSX.Element => {
+  const { state, updateAlertState, updateToastState } = useUIState();
 
   return (
-    <UIContext.Provider value={{ state, updateAlertState }}>
+    <UIContext.Provider value={{ state, updateAlertState, updateToastState }}>
       {children}
       <Alert />
+      <Toast />
     </UIContext.Provider>
   );
 };
