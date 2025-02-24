@@ -8,6 +8,7 @@ interface Props {
   textBold?: boolean;
   textColored?: boolean;
   className?: Tailwind.ClassNames;
+  paddingVertical?: number;
 }
 
 const LabeledText = ({
@@ -18,8 +19,9 @@ const LabeledText = ({
   textBold,
   textColored,
   className,
+  paddingVertical = 5,
 }: Props): JSX.Element => {
-  const containerStyle = mergeStyle('flex justify-between', className);
+  const containerStyle = mergeStyle(`flex justify-between py-${paddingVertical}`, className);
   const textSize = `text-${fontSize}`;
 
   return (

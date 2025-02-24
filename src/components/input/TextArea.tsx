@@ -18,17 +18,14 @@ const TextArea = ({
   ...props
 }: Props): JSX.Element => {
   const [textLength, setTextLength] = useState(0);
-  const textAreaStyle = mergeStyle(
-    'flex w-full items-center rounded border-[1px] border-solid border-gray-3 p-12 placeholder:text-gray-5 focus:border-dark-3 focus:outline-none min-h-[44px] caret-dark-6',
-    className,
-  );
+  const containerStyle = mergeStyle('flex-1', className);
 
   return (
-    <div>
+    <div className={containerStyle}>
       <textarea
         disabled={disabled}
         maxLength={maxLength}
-        className={textAreaStyle}
+        className="flex min-h-[44px] w-full items-center rounded border-[1px] border-solid border-gray-3 p-12 caret-dark-6 placeholder:text-gray-5 focus:border-dark-3 focus:outline-none"
         placeholder={placeholder}
         onChange={(e) => {
           setTextLength(e.target.value?.length);
