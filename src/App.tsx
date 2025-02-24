@@ -4,7 +4,7 @@ import {
   // Loading,
   Empty,
 } from './components/element';
-import { InputText, Select, InputMobile, InputNumber } from './components/input';
+import { InputText, Select, InputNumber, TextArea } from './components/input';
 
 const App = () => {
   const dialog = useDialog();
@@ -35,12 +35,18 @@ const App = () => {
           className="mb-16"
         />
         <InputText label="배송지2" className="mb-16" disabled />
-        <InputMobile label="연락처" className="mb-16" />
         <InputNumber label="숫자만썽" required className="mb-16" />
         <Select
-          options={[{ value: '배송전 미리 연락바랍니다.', label: '배송전 미리 연락바랍니다.' }]}
+          options={[
+            { value: '테스트1', label: '테스트1' },
+            { value: '테스트2', label: '테스트2' },
+            { value: '테스트3', label: '테스트3' },
+            { value: '테스트4', label: '테스트4' },
+            { value: '테스트5', label: '테스트5' },
+          ]}
           className="mb-16"
         />
+        <TextArea maxLength={100} />
         {/* <Loading overlay /> */}
       </div>
     </div>
