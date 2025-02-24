@@ -6,6 +6,7 @@ interface Props {
   className?: Tailwind.ClassNames;
   placeholder?: string;
   maxLength?: number;
+  onChange?: () => void;
 }
 
 const InputNumber = ({
@@ -14,6 +15,7 @@ const InputNumber = ({
   className,
   placeholder,
   maxLength,
+  onChange,
   ...props
 }: Props): JSX.Element => {
   const containerClass = mergeStyle(`flex items-center `, className);
@@ -32,10 +34,10 @@ const InputNumber = ({
         inputMode="numeric"
         type="number"
         onChange={(e) => {
-          // limit maxLength
           if (!!maxLength && e.target.value.length > maxLength) {
             e.target.value = e.target.value.substring(0, maxLength);
           }
+          if (onChange) onChange();
         }}
         placeholder={placeholder}
         {...props}

@@ -8,6 +8,7 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   placeholder?: string;
   disabled?: boolean;
   InnerButton?: JSX.Element;
+  onChange?: () => void;
 }
 
 const InputText = ({
@@ -18,6 +19,7 @@ const InputText = ({
   InnerButton,
   placeholder = '입력란을 작성해주세요.',
   disabled = false,
+  onChange,
   ...props
 }: Props): JSX.Element => {
   const textSize = `text-${fontSize}`;
@@ -36,6 +38,7 @@ const InputText = ({
           className={`${textSize} ${disabled && 'cursor-not-allowed'} h-[44px] w-full appearance-none rounded-4 border-[1px] border-gray-3 bg-white px-12 font-light placeholder-gray-5 focus:border-dark-3 focus:outline-none`}
           placeholder={placeholder}
           disabled={disabled}
+          onChange={onChange}
           {...props}
         />
       </div>
