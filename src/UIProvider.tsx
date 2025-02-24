@@ -17,7 +17,15 @@ const UIContext = createContext<UIContextInterface>({
 });
 
 export const UIProvider = ({ children }: { children: JSX.Element }): JSX.Element => {
-  const { state, updateAlertState, updateToastState } = useStore();
+  const { state, dispatch } = useStore();
+
+  const updateAlertState = (alertState: AlertInterface) => {
+    dispatch({ type: 'UPDATE_ALERT', payload: { ...state, alert: alertState } });
+  };
+
+  const updateToastState = (toastState: any) => {
+    dispatch({ type: 'UPDATE_TOAST', payload: { ...state, toast: toastState } });
+  };
 
   return (
     <UIContext.Provider value={{ state, updateAlertState, updateToastState }}>
