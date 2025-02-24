@@ -5,6 +5,7 @@ interface Props {
   maxLength?: number;
   placeholder?: string;
   className?: string;
+  disabled?: boolean;
   onChange?: (value: string) => void;
 }
 
@@ -12,6 +13,7 @@ const TextArea = ({
   maxLength,
   placeholder = '내용을 작성해주세요.',
   className,
+  disabled,
   onChange,
   ...props
 }: Props): JSX.Element => {
@@ -24,6 +26,7 @@ const TextArea = ({
   return (
     <div>
       <textarea
+        disabled={disabled}
         maxLength={maxLength}
         className={textAreaStyle}
         placeholder={placeholder}
