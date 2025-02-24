@@ -19,7 +19,7 @@ const TextArea = ({
 }: Props): JSX.Element => {
   const [textLength, setTextLength] = useState(0);
   const textAreaStyle = mergeStyle(
-    'flex w-full items-center rounded border-[1px] border-solid border-gray-3 p-12 placeholder:text-gray-5 focus:border-dark-3 focus:outline-none min-h-[44px]',
+    'flex w-full items-center rounded border-[1px] border-solid border-gray-3 p-12 placeholder:text-gray-5 focus:border-dark-3 focus:outline-none min-h-[44px] caret-dark-6',
     className,
   );
 
