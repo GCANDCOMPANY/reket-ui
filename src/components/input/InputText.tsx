@@ -35,7 +35,7 @@ const InputText = ({
       )}
       <div className="flex-1">
         <input
-          className={`${textSize} ${disabled && 'cursor-not-allowed'} h-[44px] w-full appearance-none rounded-4 border-[1px] border-gray-3 bg-white px-12 font-light placeholder-gray-5 focus:border-dark-3 focus:outline-none`}
+          className={`${textSize} ${disabled && 'cursor-not-allowed'} h-[44px] w-full appearance-none rounded border-[1px] border-gray-3 bg-white px-12 font-light placeholder-gray-5 focus:border-dark-3 focus:outline-none`}
           placeholder={placeholder}
           disabled={disabled}
           onChange={onChange}
