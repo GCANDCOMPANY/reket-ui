@@ -18,6 +18,9 @@ export default defineConfig({
       output: { globals: { react: 'React', 'react-dom': 'ReactDOM' } },
     },
   },
+  server: {
+    host: '0.0.0.0',
+  },
   plugins: [react(), dts({ rollupTypes: true }), cssInjectedByJsPlugin()],
   css: { postcss: { plugins: [tailwindcss, autoprefixer] } },
 });
