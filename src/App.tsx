@@ -5,6 +5,7 @@ import {
   Empty,
 } from './components/element';
 import { InputText, Select, InputNumber, TextArea } from './components/input';
+import { LabeledText } from './components/text';
 
 const App = () => {
   const dialog = useDialog();
@@ -47,6 +48,10 @@ const App = () => {
           className="mb-16"
         />
         <TextArea maxLength={100} />
+        <LabeledText textBold label="상품 가격" text="168,000원" className="mb-10 mt-16" />
+        <LabeledText labelBold textColored label="상품 할인" text="-33,600원" className="mb-10" />
+        <LabeledText labelBold label="등급 할인" text="-33,600원" className="mb-10" />
+        <LabeledText label="배송비" textBold text="-33,600원" className="mb-10" />
         {/* <Loading overlay /> */}
       </div>
     </div>
