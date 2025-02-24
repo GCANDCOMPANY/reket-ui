@@ -1,4 +1,5 @@
 import { mergeStyle } from '../../utils/style';
+import InputLabel from './InputLabel';
 
 interface Props {
   label?: string;
@@ -22,12 +23,7 @@ const InputNumber = ({
 
   return (
     <div className={containerClass}>
-      {label && (
-        <label className="w-80 text-16 font-medium text-dark-6">
-          {label}
-          {required && <span className="text-red-6"> *</span>}
-        </label>
-      )}
+      <InputLabel label={label} required={required} />
       <input
         className={`h-[44px] w-full flex-1 rounded-4 border-[1px] border-gray-3 px-12 text-16 font-light placeholder-gray-5 focus:border-dark-3 focus:outline-none`}
         min={0}

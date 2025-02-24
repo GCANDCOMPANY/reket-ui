@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { IoChevronDownOutline } from '@react-icons/all-files/io5/IoChevronDownOutline';
 import { IoChevronUpOutline } from '@react-icons/all-files/io5/IoChevronUpOutline';
+
 import { mergeStyle } from '../../utils/style';
 import { useOutsideClick } from '../../hooks';
 
