@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { AiOutlineLoading3Quarters } from '@react-icons/all-files/ai/AiOutlineLoading3Quarters';
 import { mergeStyle } from '../../utils/style';
 
@@ -12,17 +13,26 @@ const Loading = ({
   isLoading = true,
   overlay,
   className = '',
-  size = 42,
+  size = 32,
   ...props
 }: Props): JSX.Element | null => {
   const overlayStyle = overlay
-    ? 'fixed left-0 top-0 z-20 h-screen w-screen bg-black bg-opacity-10 flex justify-center items-center'
+    ? 'fixed left-0 top-0 z-50 h-screen w-screen bg-black bg-opacity-10 flex justify-center items-center'
     : '';
-  const spinnerClass = mergeStyle('animate-spin text-gray-5', className);
+  const spinnerClass = mergeStyle('animate-spin text-dark-5', className);
+
+  useEffect(() => {
+    if (isLoading) document.body.style.overflow = 'hidden';
+    else document.body.style.overflow = 'unset';
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isLoading]);
 
   return isLoading ? (
     <div className={overlayStyle} {...props}>
-      <AiOutlineLoading3Quarters size={size} className={spinnerClass} color="" />
+      <AiOutlineLoading3Quarters size={size} className={spinnerClass} />
     </div>
   ) : null;
 };
