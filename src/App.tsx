@@ -1,7 +1,10 @@
 import Button from './components/button/Button';
 import { useDialog } from './hooks';
-import { Loading, Empty } from './components/element';
-import { InputText } from './components/input';
+import {
+  // Loading,
+  Empty,
+} from './components/element';
+import { InputText, Select, InputMobile, InputNumber } from './components/input';
 
 const App = () => {
   const dialog = useDialog();
@@ -28,17 +31,16 @@ const App = () => {
         <InputText
           required
           label="배송지1"
-          placeholder="입력란을 작성해주세요."
           InnerButton={<Button size="m" text="검색" option="filled" color="dark" />}
           className="mb-16"
         />
-        <InputText
-          required
-          label="배송지2"
-          placeholder="입력란을 작성해주세요."
+        <InputText label="배송지2" className="mb-16" disabled />
+        <InputMobile label="연락처" className="mb-16" />
+        <InputNumber label="숫자만썽" required className="mb-16" />
+        <Select
+          options={[{ value: '배송전 미리 연락바랍니다.', label: '배송전 미리 연락바랍니다.' }]}
           className="mb-16"
         />
-        <InputText placeholder="입력란을 작성해주세요." />
         {/* <Loading overlay /> */}
       </div>
     </div>

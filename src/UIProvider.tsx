@@ -1,5 +1,8 @@
 import { createContext, useContext } from 'react';
-import { Alert, Toast } from './components/dialog';
+import {
+  Alert,
+  // Toast
+} from './components/dialog';
 import { AlertInterface } from './types/app';
 import { StateInterface } from './types/app';
 import { initialState, useStore } from './hooks/useStore';
@@ -31,7 +34,7 @@ export const UIProvider = ({ children }: { children: JSX.Element }): JSX.Element
     <UIContext.Provider value={{ state, updateAlertState, updateToastState }}>
       {children}
       <Alert />
-      <Toast />
+      {/* <Toast /> */}
     </UIContext.Provider>
   );
 };
