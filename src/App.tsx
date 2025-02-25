@@ -6,7 +6,6 @@ import {
   Empty,
 } from './components/element';
 import { InputText, Select, InputNumber, TextArea, Checkbox } from './components/input';
-import { Radio } from './components/radio';
 import { LabeledText } from './components/text';
 import RadioGroup from './components/radio/RadioGroup';
 
@@ -77,13 +76,6 @@ const App = () => {
           ]}
           isVertical
         />
-        {/* <Radio
-          label="네이버페이"
-          isChecked={isChecked}
-          onClick={() => {
-            setIsChecked((prev) => !prev);
-          }}
-        /> */}
         {/* <Loading overlay /> */}
       </div>
     </div>

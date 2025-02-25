@@ -17,7 +17,7 @@ interface Props {
 
 const Radio = ({ label, value, isChecked = false, size = 20, onClick, className }: Props) => {
   const { onRadioChange } = useContext(RadioGroupContext);
-  const containerStyle = mergeStyle('flex items-center cursor-pointer py-5', className);
+  const containerStyle = mergeStyle('flex items-center cursor-pointer py-8', className);
 
   return (
     <label
