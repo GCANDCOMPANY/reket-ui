@@ -6,6 +6,8 @@ import tailwindcss from 'tailwindcss';
 import autoprefixer from 'autoprefixer';
 import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
 
+const isStorybook = process.env.STORYBOOK === 'true';
+
 export default defineConfig({
   build: {
     lib: {
@@ -21,6 +23,10 @@ export default defineConfig({
   server: {
     host: '0.0.0.0',
   },
-  plugins: [react(), dts({ rollupTypes: true }), cssInjectedByJsPlugin()],
+  plugins: [
+    react(),
+    cssInjectedByJsPlugin(),
+    ...(!isStorybook ? [dts({ rollupTypes: true })] : []),
+  ],
   css: { postcss: { plugins: [tailwindcss, autoprefixer] } },
 });
