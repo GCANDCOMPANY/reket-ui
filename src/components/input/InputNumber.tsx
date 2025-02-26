@@ -7,7 +7,7 @@ interface Props {
   className?: Tailwind.ClassNames;
   placeholder?: string;
   maxLength?: number;
-  onChange?: (value: string) => void;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const InputNumber = ({
@@ -23,7 +23,7 @@ const InputNumber = ({
 
   return (
     <div className={containerClass}>
-      <InputLabel label={label} required={required} />
+      {!!label && <InputLabel label={label} required={required} />}
       <input
         className="h-[44px] w-full flex-1 rounded-4 border-[1px] border-gray-3 px-12 text-16 font-light placeholder-gray-5 caret-dark-6 focus:border-dark-3 focus:outline-none"
         min={0}
@@ -33,7 +33,7 @@ const InputNumber = ({
           if (!!maxLength && e.target.value?.length > maxLength) {
             e.target.value = e.target.value?.substring(0, maxLength);
           }
-          if (onChange) onChange(e.target?.value);
+          onChange?.(e);
         }}
         placeholder={placeholder}
         {...props}
