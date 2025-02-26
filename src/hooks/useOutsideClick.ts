@@ -1,6 +1,7 @@
 import { useRef, useEffect, useCallback } from 'react';
 
 const useOutsideClick = (onClickOutside: () => void) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const ref = useRef<any>(null);
 
   const handleClickOutside = useCallback(

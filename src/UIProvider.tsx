@@ -1,22 +1,16 @@
-import { createContext, useContext } from 'react';
-import {
-  Alert,
-  // Toast
-} from './components/dialog';
-import { AlertInterface } from './types/app';
-import { StateInterface } from './types/app';
+import { createContext, useContext, useMemo } from 'react';
+import { Alert } from './components/dialog';
+import { AlertInterface, StateInterface } from './types/app';
 import { initialState, useStore } from './hooks/useStore';
 
 interface UIContextInterface {
   state: StateInterface;
   updateAlertState: (alertState: AlertInterface) => void;
-  updateToastState: (toastState: any) => void;
 }
 
 const UIContext = createContext<UIContextInterface>({
   state: initialState,
   updateAlertState: () => {},
-  updateToastState: () => {},
 });
 
 export const UIProvider = ({ children }: { children: JSX.Element }): JSX.Element => {
@@ -26,15 +20,15 @@ export const UIProvider = ({ children }: { children: JSX.Element }): JSX.Element
     dispatch({ type: 'UPDATE_ALERT', payload: { ...state, alert: alertState } });
   };
 
-  const updateToastState = (toastState: any) => {
-    dispatch({ type: 'UPDATE_TOAST', payload: { ...state, toast: toastState } });
-  };
+  const uiContextProviderValue = useMemo(
+    () => ({ state, updateAlertState }),
+    [state, updateAlertState],
+  );
 
   return (
-    <UIContext.Provider value={{ state, updateAlertState, updateToastState }}>
+    <UIContext.Provider value={uiContextProviderValue}>
       {children}
       <Alert />
-      {/* <Toast /> */}
     </UIContext.Provider>
   );
 };

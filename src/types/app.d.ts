@@ -11,7 +11,6 @@ export interface AlertInterface {
 
 export interface StateInterface {
   alert: AlertInterface;
-  toast: any;
 }
 
 interface ActionInterface {

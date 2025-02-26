@@ -56,7 +56,8 @@ const Select = ({
               key={option.value}
             >
               <button
-                className={`w-full overflow-x-hidden text-ellipsis py-12 text-left`}
+                className="w-full overflow-x-hidden text-ellipsis py-12 text-left
+                "
                 onClick={() => {
                   setSelected(option);
                   setIsOpen((prev) => !prev);

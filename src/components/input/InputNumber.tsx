@@ -25,7 +25,7 @@ const InputNumber = ({
     <div className={containerClass}>
       <InputLabel label={label} required={required} />
       <input
-        className={`h-[44px] w-full flex-1 rounded-4 border-[1px] border-gray-3 px-12 text-16 font-light placeholder-gray-5 caret-dark-6 focus:border-dark-3 focus:outline-none`}
+        className="h-[44px] w-full flex-1 rounded-4 border-[1px] border-gray-3 px-12 text-16 font-light placeholder-gray-5 caret-dark-6 focus:border-dark-3 focus:outline-none"
         min={0}
         inputMode="numeric"
         type="number"
