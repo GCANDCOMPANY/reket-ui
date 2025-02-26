@@ -7,7 +7,7 @@ interface Props {
   className?: Tailwind.ClassNames;
   placeholder?: string;
   maxLength?: number;
-  onChange?: () => void;
+  onChange?: (value: string) => void;
 }
 
 const InputNumber = ({
@@ -30,10 +30,10 @@ const InputNumber = ({
         inputMode="numeric"
         type="number"
         onChange={(e) => {
-          if (!!maxLength && e.target.value.length > maxLength) {
-            e.target.value = e.target.value.substring(0, maxLength);
+          if (!!maxLength && e.target.value?.length > maxLength) {
+            e.target.value = e.target.value?.substring(0, maxLength);
           }
-          if (onChange) onChange();
+          if (onChange) onChange(e.target?.value);
         }}
         placeholder={placeholder}
         {...props}
