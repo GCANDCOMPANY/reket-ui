@@ -4,6 +4,7 @@ import { mergeStyle } from '../../utils/style';
 
 interface Props extends React.ComponentProps<'div'> {
   isLoading?: boolean;
+  isFixed?: boolean;
   overlay?: boolean;
   className?: React.SVGAttributes<SVGElement>['className'];
   size?: number;
@@ -11,6 +12,7 @@ interface Props extends React.ComponentProps<'div'> {
 
 const Loading = ({
   isLoading = true,
+  isFixed = true,
   overlay,
   className = '',
   size = 32,
@@ -22,13 +24,12 @@ const Loading = ({
   const spinnerClass = mergeStyle('animate-spin text-dark-5', className);
 
   useEffect(() => {
-    if (isLoading) document.body.style.overflow = 'hidden';
-    else document.body.style.overflow = 'unset';
+    document.body.style.overflow = isLoading && isFixed ? 'hidden' : 'unset';
 
     return () => {
       document.body.style.overflow = 'unset';
     };
-  }, [isLoading]);
+  }, [isLoading, isFixed]);
 
   return isLoading ? (
     <div className={overlayStyle} {...props}>
