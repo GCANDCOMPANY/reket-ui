@@ -26,9 +26,13 @@ const LabeledText = ({
 
   return (
     <div className={containerStyle}>
-      <p className={`tracking-tight ${labelBold && 'font-semibold'} ${textSize}`}>{label}</p>
       <p
-        className={`${textBold && 'font-semibold'} ${textColored && 'text-violet-8'} ${textSize} text-16 tracking-tight`}
+        className={`tracking-tight ${labelBold ? 'font-semibold' : 'font-normal'} ${textSize} mr-16 whitespace-nowrap`}
+      >
+        {label}
+      </p>
+      <p
+        className={`${textBold ? 'font-semibold' : 'font-normal'} ${textColored ? 'text-violet-8' : 'text-dark-6'} ${textSize} break-all text-right leading-5 tracking-tight`}
       >
         {text}
       </p>
