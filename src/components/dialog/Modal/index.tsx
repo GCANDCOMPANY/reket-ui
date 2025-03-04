@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { mergeStyle } from '../../utils/style';
+import { mergeStyle } from '../../../utils/style';
 
 interface ModalProps {
   isOpen?: boolean;
