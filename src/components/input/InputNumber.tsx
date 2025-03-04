@@ -2,6 +2,7 @@ import { mergeStyle } from '../../utils/style';
 import InputLabel from './InputLabel';
 
 interface Props {
+  value?: number;
   label?: string;
   required?: boolean;
   className?: Tailwind.ClassNames;
@@ -11,6 +12,7 @@ interface Props {
 }
 
 const InputNumber = ({
+  value,
   label,
   required,
   className,
@@ -25,6 +27,7 @@ const InputNumber = ({
     <div className={containerClass}>
       {!!label && <InputLabel label={label} required={required} />}
       <input
+        value={value}
         className="h-[44px] w-full flex-1 rounded-4 border-[1px] border-gray-3 px-12 text-16 font-light placeholder-gray-5 caret-dark-6 focus:border-dark-3 focus:outline-none"
         min={0}
         inputMode="numeric"
