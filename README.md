@@ -1,16 +1,16 @@
 # @reket/ui
 
-REKET UI Library Based on `React` and `Tailwind CSS`
+<strong>REKET UI Library</strong> Based on `React` and `Tailwind CSS`
 
 <br />
 
-## Storybook
+## 📒 Storybook
 
-<a href="https://gcandcompany.github.io/reket-ui/">@reket/ui Storybook Page</a>
+<a href="https://gcandcompany.github.io/reket-ui/">REKET UI Storybook Link</a>
 
 <br />
 
-## Installation
+## 📦 Install
 
 ```sh
 // with npm
@@ -22,7 +22,7 @@ yarn add @reket/ui
 
 <br />
 
-## How to use
+## ✔️ How to use
 
 ```jsx
 import { Button } from '@reket/ui';
@@ -31,19 +31,3 @@ const YourComponent = () => {
   return <Button text="Button Text" color="purple" size="xl" option="filled" />;
 };
 ```
-
-### `<Button />` Props
-
-| **Prop**    | **Type**                                                 | **Default** |
-| ----------- | -------------------------------------------------------- | ----------- |
-| `text`      | string                                                   |             |
-| `option`    | `filled` `outline`                                       | `outline`   |
-| `color`     | `dark` `purple` `red` `gray`                             | `gray`      |
-| `size`      | `xs` `s` `m` `l` `xl`                                    | `s`         |
-| `display`   | `block` `inline`                                         | `inline`    |
-| `onClick`   | `(e: React.MouseEvent<HTMLElement, MouseEvent>) => void` |             |
-| `className` | string                                                   |             |
-
-<br />
-
-🚧...work in progress...🚧
