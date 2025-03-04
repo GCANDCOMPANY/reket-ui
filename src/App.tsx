@@ -13,6 +13,9 @@ const App = () => {
   const dialog = useDialog();
   const [isChecked, setIsChecked] = useState(false);
   const [radio, setRadio] = useState<string | number>('option_1');
+  const [inputValue, setInputValue] = useState('기본값');
+
+  console.log(inputValue);
 
   return (
     <div className="w-screen p-16">
@@ -34,6 +37,10 @@ const App = () => {
         />
         <Empty message="장바구니가 비어있어요." />
         <InputText
+          value={inputValue}
+          onChange={(e) => {
+            setInputValue(e.target.value);
+          }}
           required
           label="배송지1"
           InnerButton={<Button size="m" text="검색" option="filled" color="dark" />}
@@ -52,9 +59,16 @@ const App = () => {
           className="mb-16"
         />
         <TextArea maxLength={100} className="mb-16" />
-        <LabeledText textBold label="상품 가격" text="168,000원" />
+        <LabeledText
+          textBold
+          label="상품 가격"
+          text="168,000168,000168,000168,000168,000168,000168,000168,000168,000168,000168,000168,000168,00168,000168,000168,000168,000168,000168,000168,000168,000168,000168,000168,000168,000168,0000원"
+        />
         <LabeledText labelBold textColored label="상품 할인" text="-33,600원" />
         <LabeledText labelBold label="등급 할인" text="-33,600원" />
+        <LabeledText label="배송비" textBold text="-33,600원" />
+        <LabeledText label="배송비" textBold text="-33,600원" />
+        <LabeledText label="배송비" textBold text="-33,600원" />
         <LabeledText label="배송비" textBold text="-33,600원" />
         <Checkbox
           label="품절제외"
@@ -76,7 +90,7 @@ const App = () => {
           ]}
           isVertical
         />
-        {/* <Loading overlay /> */}
+        {/* <Loading overlay isFixed={false} /> */}
       </div>
     </div>
   );

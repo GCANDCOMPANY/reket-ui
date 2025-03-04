@@ -11,6 +11,10 @@ const config: StorybookConfig = {
     },
     '@storybook/addon-interactions',
   ],
+  docs: {
+    autodocs: true,
+    defaultName: 'Documentation',
+  },
   framework: {
     name: '@storybook/react-vite',
     options: {},

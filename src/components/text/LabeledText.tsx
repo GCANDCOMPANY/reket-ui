@@ -4,9 +4,9 @@ interface Props {
   fontSize?: number;
   label?: string;
   text?: string;
-  labelBold: boolean;
-  textBold: boolean;
-  textColored: boolean;
+  labelBold?: boolean;
+  textBold?: boolean;
+  textColored?: boolean;
   className?: Tailwind.ClassNames;
   paddingVertical?: number;
 }
