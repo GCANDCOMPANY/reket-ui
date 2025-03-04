@@ -29,4 +29,5 @@ export default defineConfig({
     ...(!isStorybook ? [dts({ rollupTypes: true })] : []),
   ],
   css: { postcss: { plugins: [tailwindcss, autoprefixer] } },
+  base: '/reket-ui/',
 });
