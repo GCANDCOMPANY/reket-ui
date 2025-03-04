@@ -30,5 +30,9 @@ export const Base: StoryObj<typeof LabeledText> = {
     paddingVertical: 5,
   },
   // Storybook Docs 세팅
-  argTypes: {},
+  argTypes: {
+    className: {
+      description: 'custom style by adding classname',
+    },
+  },
 };
