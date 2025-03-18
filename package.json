@@ -35,7 +35,6 @@
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
     "dayjs": "^1.11.10",
-    "sass": "^1.84.0",
     "tailwind-merge": "^2.2.0"
   },
   "peerDependencies": {
@@ -43,6 +42,7 @@
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
+    "sass": "^1.84.0",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@chromatic-com/storybook": "1.2.0",
     "@storybook/addon-essentials": "7.6.17",
