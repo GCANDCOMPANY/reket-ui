@@ -21,7 +21,10 @@ const LabeledText = ({
   className,
   paddingVertical = 5,
 }: Props): JSX.Element => {
-  const containerStyle = mergeStyle(`flex justify-between py-${paddingVertical}`, className);
+  const containerStyle = mergeStyle(
+    `flex items-center justify-between py-${paddingVertical}`,
+    className,
+  );
   const textSize = `text-${fontSize}`;
 
   return (
