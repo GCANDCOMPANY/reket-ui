@@ -1,6 +1,6 @@
 {
   "name": "@reket/ui",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Reket UI Library",
   "license": "MIT",
   "homepage": "https://github.com/GCANDCOMPANY/reket-ui",
@@ -28,9 +28,9 @@
   "scripts": {
     "dev": "vite",
     "dev:storybook": "storybook dev -p 6006",
-    "build": "rm -rf dist && tsc && vite build",
-    "build:test": "yarn build && yarn pack",
-    "build:storybook": "STORYBOOK=true storybook build"
+    "clean": "rm -rf dist storybook-static",
+    "build": "yarn clean && tsc && vite build && STORYBOOK=true storybook build",
+    "build:test": "yarn build && yarn pack"
   },
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
@@ -42,9 +42,7 @@
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
-    "sass": "^1.84.0",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@chromatic-com/storybook": "1.2.0",
     "@storybook/addon-essentials": "7.6.17",
     "@storybook/addon-interactions": "7.6.17",
     "@storybook/blocks": "7.6.17",
@@ -61,10 +59,8 @@
     "@typescript-eslint/parser": "^6.14.0",
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.20",
-    "babel-eslint": "^10.1.0",
     "eslint": "^8.56.0",
     "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-next": "^11.0.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.26.0",
@@ -73,11 +69,11 @@
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-storybook": "^0.11.3",
     "postcss": "^8.5.1",
-    "postcss-cli": "^11.0.0",
     "prettier": "^3.1.1",
     "prettier-plugin-tailwindcss": "^0.5.9",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "sass": "^1.84.0",
     "storybook": "7.6.17",
     "tailwindcss": "^3.3.6",
     "typescript": "^5.7.3",

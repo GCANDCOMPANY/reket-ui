@@ -15,8 +15,6 @@ const App = () => {
   const [radio, setRadio] = useState<string | number>('option_1');
   const [inputValue, setInputValue] = useState('기본값');
 
-  console.log(inputValue);
-
   return (
     <div className="w-screen p-16">
       <div className="mb-16">
