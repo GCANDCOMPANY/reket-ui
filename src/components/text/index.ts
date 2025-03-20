@@ -1,2 +1,2 @@
 // eslint-disable-next-line import/prefer-default-export
-export { default as LabeledText } from './LabeledText';
+export { default as TwoColumnText } from './TwoColumnText';

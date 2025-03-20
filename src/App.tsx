@@ -5,8 +5,8 @@ import {
   // Loading,
   Empty,
 } from './components/element';
-import { InputText, Select, InputNumber, TextArea, Checkbox } from './components/input';
-import { LabeledText } from './components/text';
+import { Input, Select, InputNumber, TextArea, Checkbox } from './components/input';
+import { TwoColumnText } from './components/text';
 import RadioGroup from './components/radio/RadioGroup';
 
 const App = () => {
@@ -34,7 +34,7 @@ const App = () => {
           }}
         />
         <Empty message="장바구니가 비어있어요." />
-        <InputText
+        <Input
           value={inputValue}
           onChange={(e) => {
             setInputValue(e.target.value);
@@ -44,7 +44,7 @@ const App = () => {
           InnerButton={<Button size="m" text="검색" option="filled" color="dark" />}
           className="mb-16"
         />
-        <InputText label="배송지2" className="mb-16" disabled />
+        <Input label="배송지2" className="mb-16" disabled />
         <InputNumber label="숫자만썽" required className="mb-16" />
         <Select
           options={[
@@ -57,17 +57,17 @@ const App = () => {
           className="mb-16"
         />
         <TextArea maxLength={100} className="mb-16" />
-        <LabeledText
+        <TwoColumnText
           textBold
           label="상품 가격"
           text="168,000168,000168,000168,000168,000168,000168,000168,000168,000168,000168,000168,000168,00168,000168,000168,000168,000168,000168,000168,000168,000168,000168,000168,000168,000168,0000원"
         />
-        <LabeledText labelBold textColored label="상품 할인" text="-33,600원" />
-        <LabeledText labelBold label="등급 할인" text="-33,600원" />
-        <LabeledText label="배송비" textBold text="-33,600원" />
-        <LabeledText label="배송비" textBold text="-33,600원" />
-        <LabeledText label="배송비" textBold text="-33,600원" />
-        <LabeledText label="배송비" textBold text="-33,600원" />
+        <TwoColumnText labelBold textColored label="상품 할인" text="-33,600원" />
+        <TwoColumnText labelBold label="등급 할인" text="-33,600원" />
+        <TwoColumnText label="배송비" textBold text="-33,600원" />
+        <TwoColumnText label="배송비" textBold text="-33,600원" />
+        <TwoColumnText label="배송비" textBold text="-33,600원" />
+        <TwoColumnText label="배송비" textBold text="-33,600원" />
         <Checkbox
           label="품절제외"
           isChecked={isChecked}

@@ -14,7 +14,7 @@ interface Props {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const InputText = ({
+const Input = ({
   value,
   required = false,
   className = '',
@@ -49,4 +49,4 @@ const InputText = ({
   );
 };
 
-export default InputText;
+export default Input;

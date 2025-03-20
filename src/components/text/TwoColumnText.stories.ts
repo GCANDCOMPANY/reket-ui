@@ -1,12 +1,12 @@
 import { Meta, StoryObj } from '@storybook/react';
-import LabeledText from './LabeledText';
+import TwoColumnText from './TwoColumnText';
 
-const meta: Meta<typeof LabeledText> = {
-  title: 'Component/LabeledText',
-  component: LabeledText,
+const meta: Meta<typeof TwoColumnText> = {
+  title: 'Component/TwoColumnText',
+  component: TwoColumnText,
   parameters: {
     layout: 'centered',
-    componentSubtitle: 'LabeledText Component',
+    componentSubtitle: 'TwoColumnText Component',
     docs: {
       description: {
         component: '@reket/ui',
@@ -17,8 +17,8 @@ const meta: Meta<typeof LabeledText> = {
 };
 export default meta;
 
-export const Base: StoryObj<typeof LabeledText> = {
-  // Storybook의 default LabeledText Props
+export const Base: StoryObj<typeof TwoColumnText> = {
+  // Storybook의 default TwoColumnText Props
   args: {
     fontSize: 16,
     label: '이름',

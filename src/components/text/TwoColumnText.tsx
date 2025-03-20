@@ -11,7 +11,7 @@ interface Props {
   paddingVertical?: number;
 }
 
-const LabeledText = ({
+const TwoColumnText = ({
   fontSize = 16,
   label,
   text,
@@ -43,4 +43,4 @@ const LabeledText = ({
   );
 };
 
-export default LabeledText;
+export default TwoColumnText;

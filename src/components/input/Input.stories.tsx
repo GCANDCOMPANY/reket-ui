@@ -1,13 +1,13 @@
 import { Meta, StoryObj } from '@storybook/react';
-import InputText from './InputText';
+import Input from './Input';
 import { Button } from '../button';
 
-const meta: Meta<typeof InputText> = {
-  title: 'Component/InputText',
-  component: InputText,
+const meta: Meta<typeof Input> = {
+  title: 'Component/Input',
+  component: Input,
   parameters: {
     layout: 'centered',
-    componentSubtitle: 'InputText Component',
+    componentSubtitle: 'Input Component',
     docs: {
       description: {
         component: '@reket/ui',
@@ -18,8 +18,8 @@ const meta: Meta<typeof InputText> = {
 };
 export default meta;
 
-export const Base: StoryObj<typeof InputText> = {
-  // Storybook의 default InputText Props
+export const Base: StoryObj<typeof Input> = {
+  // Storybook의 default Input Props
   args: {
     value: '',
     required: true,
