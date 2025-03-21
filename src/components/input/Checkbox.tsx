@@ -17,7 +17,7 @@ const Checkbox = ({ label, isChecked = false, size = 18, onClick, className }: P
     <button className={containerStyle} onClick={onClick}>
       <IoCheckbox size={size} color={isChecked ? 'black' : colors.gray[4]} />
       {!!label && (
-        <p className={`ml-4 tracking-tight ${isChecked ? 'text-dark-6' : 'text-gray-6'}`}>
+        <p className={`ml-4 leading-4 tracking-tight ${isChecked ? 'text-dark-6' : 'text-gray-6'}`}>
           {label}
         </p>
       )}
