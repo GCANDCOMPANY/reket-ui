@@ -3,6 +3,7 @@ import { mergeStyle } from '../../utils/style';
 import InputLabel from './InputLabel';
 
 interface Props {
+  name?: string;
   value?: string | number;
   required?: boolean;
   className?: Tailwind.ClassNames;
@@ -15,6 +16,7 @@ interface Props {
 }
 
 const Input = ({
+  name,
   value,
   required = false,
   className = '',
@@ -34,6 +36,7 @@ const Input = ({
       {!!label && <InputLabel label={label} required={required} />}
       <div className="flex-1">
         <input
+          name={name}
           value={value}
           className={`${textSize} ${disabled && 'cursor-not-allowed'} h-[44px] w-full appearance-none rounded border-[1px] border-gray-3 bg-white px-12 font-light placeholder-gray-5 caret-dark-6 focus:border-dark-3 focus:outline-none`}
           placeholder={placeholder}
