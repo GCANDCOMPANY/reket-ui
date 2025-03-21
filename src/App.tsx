@@ -23,7 +23,6 @@ const App = () => {
           size="l"
           display="block"
           color="dark"
-          option="filled"
           className="mt-20"
           onClick={() => {
             dialog.alert({
@@ -34,17 +33,28 @@ const App = () => {
           }}
         />
         <Empty message="장바구니가 비어있어요." />
-        <Input
-          value={inputValue}
-          onChange={(e) => {
-            setInputValue(e.target.value);
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+
+            const formData = new FormData(e.target as HTMLFormElement);
+            const data = Object.fromEntries(formData.entries());
           }}
-          required
-          label="배송지1"
-          InnerButton={<Button size="m" text="검색" option="filled" color="dark" />}
-          className="mb-16"
-        />
-        <Input label="배송지2" className="mb-16" disabled />
+        >
+          <Input
+            name="배송지1"
+            value={inputValue}
+            onChange={(e) => {
+              setInputValue(e.target.value);
+            }}
+            required
+            label="배송지1"
+            InnerButton={<Button size="m" text="검색" option="filled" color="dark" />}
+            className="mb-16"
+          />
+          <Input name="배송지2" label="배송지2" className="mb-16" />
+          <button type="submit">제출하깅</button>
+        </form>
         <InputNumber label="숫자만썽" required className="mb-16" />
         <Select
           options={[
