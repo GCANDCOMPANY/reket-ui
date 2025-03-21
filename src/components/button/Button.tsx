@@ -56,7 +56,7 @@ const DISPLAY_STYLE = { block: 'w-full', inline: '' };
 const OPTION_STYLE = {
   dark: {
     filled: 'text-white bg-dark-6 hover:bg-dark-8',
-    outline: 'text-dark-6 border-[1px] border-solid border-dark-6 bg-white hover:bg-dark-0',
+    outline: 'text-dark-6 border-[1px] border-solid border-dark-6 bg-white hover:bg-gray-0',
   },
   purple: {
     filled: 'text-white bg-violet-6 hover:bg-violet-9',
