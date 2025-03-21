@@ -28,9 +28,8 @@
   "scripts": {
     "dev": "vite",
     "dev:storybook": "storybook dev -p 6006",
-    "clean": "rm -rf dist storybook-static",
-    "build": "yarn clean && tsc && vite build",
-    "build:storybook": "STORYBOOK=true storybook build",
+    "build": "rm -rf dist && tsc && vite build",
+    "build:storybook": "storybook build",
     "build:test": "yarn build && yarn pack"
   },
   "dependencies": {
