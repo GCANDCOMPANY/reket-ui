@@ -1,6 +1,6 @@
 {
   "name": "@reket/ui",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Reket UI Library",
   "license": "MIT",
   "homepage": "https://github.com/GCANDCOMPANY/reket-ui",
@@ -29,7 +29,7 @@
     "dev": "vite",
     "dev:storybook": "storybook dev -p 6006",
     "build": "rm -rf dist && tsc && vite build",
-    "build:storybook": "storybook build",
+    "build:storybook": "STORYBOOK=true storybook build",
     "build:test": "yarn build && yarn pack"
   },
   "dependencies": {
