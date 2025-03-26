@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { HTMLProps } from 'react';
 import { mergeStyle } from '../../utils/style';
 
 interface Props {
@@ -7,18 +7,20 @@ interface Props {
   color?: 'dark' | 'purple' | 'red' | 'gray';
   size?: 'xs' | 's' | 'm' | 'l' | 'xl';
   display?: 'block' | 'inline';
-  onClick?: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void;
-  className?: string;
+  onClick?: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void | Promise<void>;
+  className?: HTMLProps<HTMLElement>['className'];
+  children?: JSX.Element;
 }
 
 const Button = ({
-  text = 'Button',
+  text,
   option = 'outline',
   color = 'gray',
   size = 's',
   display = 'inline',
   onClick,
   className = '',
+  children,
   ...props
 }: Props): JSX.Element => {
   const classes = mergeStyle(
@@ -34,7 +36,8 @@ const Button = ({
       }}
       {...props}
     >
-      {text}
+      {!!text && text}
+      {!!children && children}
     </button>
   );
 };
