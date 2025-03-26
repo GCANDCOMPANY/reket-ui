@@ -69,7 +69,10 @@ export const Base: StoryObj<typeof Button> = {
       },
     },
     className: {
-      description: 'custom style by adding classname',
+      description: 'custom style by adding Tailwind CSS className',
+    },
+    children: {
+      description: 'add custom element inside button element',
     },
   },
 };

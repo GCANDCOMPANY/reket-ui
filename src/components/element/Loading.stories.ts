@@ -29,7 +29,7 @@ export const Base: StoryObj<typeof Loading> = {
   // Storybook Docs 세팅
   argTypes: {
     className: {
-      description: 'custom style by adding classname',
+      description: 'custom style by adding Tailwind CSS className',
     },
   },
 };
