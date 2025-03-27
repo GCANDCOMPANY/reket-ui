@@ -13,19 +13,22 @@ const meta: Meta<typeof Empty> = {
       },
     },
   },
-  tags: ['autodocs'], // docs 자동 생성
+  tags: ['autodocs'], // automatically create docs
 };
 export default meta;
 
 export const Base: StoryObj<typeof Empty> = {
-  // Storybook의 default Empty Props
+  // default Empty Props
   args: {
     size: 52,
     message: '페이지가 비어있습니다.',
     className: '',
   },
-  // Storybook Docs 세팅
+  // custom docs setting
   argTypes: {
+    size: {
+      description: 'handle size of icon',
+    },
     className: {
       description: 'custom style by adding Tailwind CSS className',
     },

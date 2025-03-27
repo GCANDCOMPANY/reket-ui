@@ -1,6 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
 import Button from './Button';
-import { fn } from '@storybook/test';
 
 const meta: Meta<typeof Button> = {
   title: 'Component/Button',
@@ -14,36 +13,35 @@ const meta: Meta<typeof Button> = {
       },
     },
   },
-  tags: ['autodocs'], // docs 자동 생성
+  tags: ['autodocs'], // automatically create docs
 };
 export default meta;
 
 export const Base: StoryObj<typeof Button> = {
-  // Storybook의 default Button Props
+  // default Button Props
   args: {
     text: 'Button',
     option: 'outline',
     display: 'inline',
     color: 'gray',
-    onClick: fn(),
   },
-  // Storybook Docs 세팅
+  // custom docs setting
   argTypes: {
     text: {
       description: 'button text',
     },
     option: {
       control: 'inline-radio',
-      description: 'button style',
+      description: 'handle base style of button',
       table: {
         type: {
-          summary: `'filled' | 'outline'`,
+          summary: 'filled | outline',
         },
       },
     },
     display: {
       control: 'inline-radio',
-      description: 'button display style',
+      description: 'handle display style of button',
       table: {
         type: {
           summary: 'block | inline',
@@ -52,10 +50,10 @@ export const Base: StoryObj<typeof Button> = {
     },
     color: {
       control: 'inline-radio',
-      description: 'button color',
+      description: 'handle color of button',
       table: {
         type: {
-          summary: `'dark' | 'gray' | 'red' | 'purple'`,
+          summary: 'dark | gray | red | purple',
         },
       },
     },
@@ -64,7 +62,7 @@ export const Base: StoryObj<typeof Button> = {
       description: 'button size',
       table: {
         type: {
-          summary: `'xs' | 's' | 'm' | 'l' | 'xl'`,
+          summary: 'xs | s | m | l | xl',
         },
       },
     },
@@ -72,7 +70,7 @@ export const Base: StoryObj<typeof Button> = {
       description: 'custom style by adding Tailwind CSS className',
     },
     children: {
-      description: 'add custom element inside button element',
+      description: 'add custom element inside the button element',
     },
   },
 };

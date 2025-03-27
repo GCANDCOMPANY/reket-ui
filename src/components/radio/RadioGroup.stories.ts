@@ -13,12 +13,12 @@ const meta: Meta<typeof RadioGroup> = {
       },
     },
   },
-  tags: ['autodocs'], // docs 자동 생성
+  tags: ['autodocs'], // automatically create docs
 };
 export default meta;
 
 export const Base: StoryObj<typeof RadioGroup> = {
-  // Storybook의 default RadioGroup Props
+  // default RadioGroup Props
   args: {
     value: '옵션1',
     options: [
@@ -28,7 +28,7 @@ export const Base: StoryObj<typeof RadioGroup> = {
     ],
     isVertical: true,
   },
-  // Storybook Docs 세팅
+  // custom docs setting
   argTypes: {
     isVertical: {
       description: 'layout of RadioGroup',

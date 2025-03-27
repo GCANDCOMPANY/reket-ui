@@ -13,12 +13,12 @@ const meta: Meta<typeof Loading> = {
       },
     },
   },
-  tags: ['autodocs'], // docs 자동 생성
+  tags: ['autodocs'], // automatically create docs
 };
 export default meta;
 
 export const Base: StoryObj<typeof Loading> = {
-  // Storybook의 default Loading Props
+  // default Loading Props
   args: {
     isLoading: true,
     isFixed: true,
@@ -26,7 +26,7 @@ export const Base: StoryObj<typeof Loading> = {
     className: '',
     size: 32,
   },
-  // Storybook Docs 세팅
+  // custom docs setting
   argTypes: {
     className: {
       description: 'custom style by adding Tailwind CSS className',

@@ -8,7 +8,6 @@ interface Props {
   textBold?: boolean;
   textColored?: boolean;
   className?: Tailwind.ClassNames;
-  paddingVertical?: number;
 }
 
 const TwoColumnText = ({
@@ -19,12 +18,8 @@ const TwoColumnText = ({
   textBold = false,
   textColored = false,
   className,
-  paddingVertical = 5,
 }: Props): JSX.Element => {
-  const containerStyle = mergeStyle(
-    `flex items-center justify-between py-${paddingVertical}`,
-    className,
-  );
+  const containerStyle = mergeStyle(`flex items-center justify-between py-5`, className);
   const textSize = `text-${fontSize}`;
 
   return (

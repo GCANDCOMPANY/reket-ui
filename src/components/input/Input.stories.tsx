@@ -14,12 +14,12 @@ const meta: Meta<typeof Input> = {
       },
     },
   },
-  tags: ['autodocs'], // docs 자동 생성
+  tags: ['autodocs'], // automatically create docs
 };
 export default meta;
 
 export const Base: StoryObj<typeof Input> = {
-  // Storybook의 default Input Props
+  // default Input Props
   args: {
     value: '',
     required: true,
@@ -29,7 +29,7 @@ export const Base: StoryObj<typeof Input> = {
     placeholder: '이름을 작성해주세요.',
     disabled: false,
   },
-  // Storybook Docs 세팅
+  // custom docs setting
   argTypes: {
     className: {
       description: 'custom style by adding Tailwind CSS className',

@@ -13,12 +13,12 @@ const meta: Meta<typeof TwoColumnText> = {
       },
     },
   },
-  tags: ['autodocs'], // docs 자동 생성
+  tags: ['autodocs'], // automatically create docs
 };
 export default meta;
 
 export const Base: StoryObj<typeof TwoColumnText> = {
-  // Storybook의 default TwoColumnText Props
+  // default TwoColumnText Props
   args: {
     fontSize: 16,
     label: '이름',
@@ -27,10 +27,12 @@ export const Base: StoryObj<typeof TwoColumnText> = {
     textBold: false,
     textColored: false,
     className: '',
-    paddingVertical: 5,
   },
-  // Storybook Docs 세팅
+  // custom docs setting
   argTypes: {
+    fontSize: {
+      description: 'set all of the font size',
+    },
     className: {
       description: 'custom style by adding classname',
     },
