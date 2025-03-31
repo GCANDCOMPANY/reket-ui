@@ -3,7 +3,7 @@ import { mergeStyle } from '../../utils/style';
 interface Props {
   label?: string;
   required?: boolean;
-  className?: string;
+  className?: Tailwind.ClassNames;
 }
 
 const InputLabel = ({ label, required, className }: Props): JSX.Element => {

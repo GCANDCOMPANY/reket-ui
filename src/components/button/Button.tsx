@@ -8,7 +8,7 @@ interface Props {
   size?: 'xs' | 's' | 'm' | 'l' | 'xl';
   display?: 'block' | 'inline';
   onClick?: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void | Promise<void>;
-  className?: HTMLProps<HTMLElement>['className'];
+  className?: Tailwind.ClassNames;
   children?: JSX.Element;
 }
 

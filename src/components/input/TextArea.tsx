@@ -4,7 +4,7 @@ import { mergeStyle } from '../../utils/style';
 interface Props {
   maxLength?: number;
   placeholder?: string;
-  className?: string;
+  className?: Tailwind.ClassNames;
   disabled?: boolean;
   onChange?: (value: string) => void;
 }

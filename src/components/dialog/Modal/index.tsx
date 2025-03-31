@@ -7,7 +7,7 @@ interface ModalProps {
   children?: (string | number | JSX.Element) | (string | number | JSX.Element)[];
   backdrop?: boolean;
   onClose?: () => Promise<void> | void;
-  className?: string;
+  className?: Tailwind.ClassNames;
 }
 
 // TODO: max-width랑 max-height 설정 필요. 지금은 children 넣는대로 w,h 제멋대로 조절됨

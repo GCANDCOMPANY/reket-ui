@@ -1,9 +1,10 @@
 import { IoIosInformationCircleOutline } from '@react-icons/all-files/io/IoIosInformationCircleOutline';
 import { mergeStyle } from '../../utils/style';
 
-interface Props extends React.ComponentProps<'div'> {
+interface Props {
   size?: number;
   message?: string;
+  className?: Tailwind.ClassNames;
 }
 
 const Empty = ({ size = 52, message = '', className, ...props }: Props): JSX.Element => {

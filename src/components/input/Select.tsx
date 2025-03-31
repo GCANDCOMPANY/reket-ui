@@ -12,7 +12,7 @@ interface Props {
     value: string;
     label: string;
   }[];
-  className?: string;
+  className?: Tailwind.ClassNames;
   onChange?: (value: string) => void;
 }
 
