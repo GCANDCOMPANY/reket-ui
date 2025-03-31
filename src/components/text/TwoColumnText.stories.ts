@@ -34,7 +34,7 @@ export const Base: StoryObj<typeof TwoColumnText> = {
       description: 'set all of the font size',
     },
     className: {
-      description: 'custom style by adding classname',
+      description: 'custom style by adding Tailwind CSS className',
     },
   },
 };
