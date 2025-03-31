@@ -5,10 +5,6 @@ import { useUIContext } from '../../../UIProvider';
 import { Button } from '../../button';
 import Icon from './Icon';
 
-interface Props {
-  isDomReady: boolean;
-}
-
 const Alert = () => {
   const { state, updateAlertState } = useUIContext();
   const { isOpen, type, title, content, onOk, onCancel } = state.alert;
