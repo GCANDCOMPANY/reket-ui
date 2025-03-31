@@ -6,7 +6,7 @@
 
 ## 📒 Storybook
 
-<a href="https://gcandcompany.github.io/reket-ui/">REKET UI Storybook Link</a>
+<a href="https://gcandcompany.github.io/reket-ui/" target="_blank">REKET UI Storybook Link</a>
 
 <br />
 
