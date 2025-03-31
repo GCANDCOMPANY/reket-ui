@@ -1,0 +1,35 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs';
+import { colors } from './constants';
+
+<Meta title="WELCOME/Color Palette" />
+
+# Color Palette
+
+> @reket/ui Color Palette is based on <a href="https://mantine.dev/theming/colors/#default-colors">Mantine Color System</a>
+
+<br />
+<br />
+
+<ColorPalette>
+  <ColorItem
+    title="Brand Color"
+    subtitle="Reket Signature Purple"
+    colors={{ pastel: colors.purple.pastel, light: colors.purple.light, base: colors.purple.base }}
+  />
+  <ColorItem title="Primary" colors={{ primary: colors.primary, secondary: colors.secondary }} />
+  <ColorItem title="SNS" colors={{ kakao: colors.kakao, naver: colors.naver }} />
+  <ColorItem title="Dark" colors={colors.dark} />
+  <ColorItem title="Gray" colors={colors.gray} />
+  <ColorItem title="Red" colors={colors.red} />
+  <ColorItem title="Pink" colors={colors.pink} />
+  <ColorItem title="Grape" colors={colors.grape} />
+  <ColorItem title="Violet" colors={colors.violet} />
+  <ColorItem title="Indigo" colors={colors.indigo} />
+  <ColorItem title="Blue" colors={colors.blue} />
+  <ColorItem title="Cyan" colors={colors.cyan} />
+  <ColorItem title="Teal" colors={colors.teal} />
+  <ColorItem title="Green" colors={colors.green} />
+  <ColorItem title="Lime" colors={colors.lime} />
+  <ColorItem title="Yellow" colors={colors.yellow} />
+  <ColorItem title="Orange" colors={colors.orange} />
+</ColorPalette>
