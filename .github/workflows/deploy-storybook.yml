@@ -6,7 +6,11 @@ on:
       - main
     paths:
       # Deploy Storybook only when related files change
-      - 'src/**/*.stories.@(js|jsx|ts|tsx|mdx)'
+      - 'src/**/*.stories.js'
+      - 'src/**/*.stories.jsx'
+      - 'src/**/*.stories.ts'
+      - 'src/**/*.stories.tsx'
+      - 'src/**/*.stories.mdx'
       - '.storybook/**'
       - 'package.json'
       - 'yarn.lock'
