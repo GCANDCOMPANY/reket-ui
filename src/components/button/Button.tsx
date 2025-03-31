@@ -36,8 +36,7 @@ const Button = ({
       }}
       {...props}
     >
-      {!!text && text}
-      {!!children && children}
+      {!!children ? children : text}
     </button>
   );
 };
