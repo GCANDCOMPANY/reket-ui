@@ -1,32 +1,24 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
 import { useUIContext } from '../../../UIProvider';
 import { Button } from '../../button';
 import Icon from './Icon';
 
+interface Props {
+  isDomReady: boolean;
+}
+
 const Alert = () => {
   const { state, updateAlertState } = useUIContext();
   const { isOpen, type, title, content, onOk, onCancel } = state.alert;
-  const [isDomReady, setIsDomReady] = useState(false);
-
-  useEffect(() => {
-    const portalRoot = document.createElement('div');
-    portalRoot.id = 'portal-root';
-    document.body.appendChild(portalRoot);
-    setIsDomReady(true);
-
-    return () => {
-      document.body.removeChild(portalRoot);
-    };
-  }, []);
 
   useEffect(() => {
     if (isOpen) document.body.style.overflow = 'hidden';
     else document.body.style.overflow = 'auto';
   }, [isOpen]);
 
-  return isDomReady && isOpen
+  return isOpen
     ? createPortal(
         <div className="z-50 h-screen w-screen">
           <div

@@ -18,29 +18,12 @@ const Modal = ({
   onClose,
   className,
 }: ModalProps): JSX.Element | null => {
-  const [isDomReady, setIsDomReady] = useState(false);
-
   useEffect(() => {
-    setIsDomReady(false);
-    const portalRoot = document.createElement('div');
-    portalRoot.id = 'portal-root';
-    document.body.appendChild(portalRoot);
-    setIsDomReady(true);
-
-    return () => {
-      document.body.removeChild(portalRoot);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
+    if (isOpen) document.body.style.overflow = 'hidden';
+    else document.body.style.overflow = 'auto';
   }, [isOpen]);
 
-  return isDomReady && isOpen
+  return isOpen
     ? createPortal(
         <div className="fixed left-0 top-0 z-50 h-screen w-screen">
           <div
