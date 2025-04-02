@@ -1,24 +1,30 @@
 import { Meta, StoryObj } from '@storybook/react';
 import TwoColumnText from './TwoColumnText';
+import { setIntroText } from '../../utils/storybookDos';
 
 const meta: Meta<typeof TwoColumnText> = {
   title: 'Component/TwoColumnText',
   component: TwoColumnText,
   parameters: {
     layout: 'centered',
-    componentSubtitle: 'TwoColumnText Component',
     docs: {
       description: {
-        component: '@reket/ui',
+        component: setIntroText('TwoColumnText'),
       },
     },
   },
-  tags: ['autodocs'], // automatically create docs
+  argTypes: {
+    fontSize: {
+      description: 'set all of the font size',
+    },
+    className: {
+      description: 'custom style by adding Tailwind CSS className',
+    },
+  },
 };
 export default meta;
 
 export const Base: StoryObj<typeof TwoColumnText> = {
-  // default TwoColumnText Props
   args: {
     fontSize: 16,
     label: '이름',
@@ -27,14 +33,5 @@ export const Base: StoryObj<typeof TwoColumnText> = {
     textBold: false,
     textColored: false,
     className: '',
-  },
-  // custom docs setting
-  argTypes: {
-    fontSize: {
-      description: 'set all of the font size',
-    },
-    className: {
-      description: 'custom style by adding Tailwind CSS className',
-    },
   },
 };

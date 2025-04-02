@@ -1,19 +1,18 @@
 import { Meta, StoryObj } from '@storybook/react';
 import Button from './Button';
+import { setIntroText } from '../../utils/storybookDos';
 
 const meta: Meta<typeof Button> = {
   title: 'Component/Button',
   component: Button,
   parameters: {
     layout: 'centered',
-    componentSubtitle: 'Button Component',
     docs: {
       description: {
-        component: '@reket/ui',
+        component: setIntroText('Button'),
       },
     },
   },
-  tags: ['autodocs'], // automatically create docs
 };
 export default meta;
 

@@ -1,25 +1,27 @@
 import { Meta, StoryObj } from '@storybook/react';
 import Input from './Input';
-import { Button } from '../button';
+import { setIntroText } from '../../utils/storybookDos';
 
 const meta: Meta<typeof Input> = {
   title: 'Component/Input',
   component: Input,
   parameters: {
     layout: 'centered',
-    componentSubtitle: 'Input Component',
     docs: {
       description: {
-        component: '@reket/ui',
+        component: setIntroText('Input'),
       },
     },
   },
-  tags: ['autodocs'], // automatically create docs
+  argTypes: {
+    className: {
+      description: 'custom style by adding Tailwind CSS className',
+    },
+  },
 };
 export default meta;
 
 export const Base: StoryObj<typeof Input> = {
-  // default Input Props
   args: {
     value: '',
     required: true,
@@ -28,11 +30,5 @@ export const Base: StoryObj<typeof Input> = {
     fontSize: 16,
     placeholder: '이름을 작성해주세요.',
     disabled: false,
-  },
-  // custom docs setting
-  argTypes: {
-    className: {
-      description: 'custom style by adding Tailwind CSS className',
-    },
   },
 };

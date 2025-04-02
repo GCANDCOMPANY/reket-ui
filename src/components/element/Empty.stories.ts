@@ -1,30 +1,18 @@
 import { Meta, StoryObj } from '@storybook/react';
 import Empty from './Empty';
+import { setIntroText } from '../../utils/storybookDos';
 
 const meta: Meta<typeof Empty> = {
   title: 'Component/Empty',
   component: Empty,
   parameters: {
     layout: 'centered',
-    componentSubtitle: 'Empty Component',
     docs: {
       description: {
-        component: '@reket/ui',
+        component: setIntroText('Empty'),
       },
     },
   },
-  tags: ['autodocs'], // automatically create docs
-};
-export default meta;
-
-export const Base: StoryObj<typeof Empty> = {
-  // default Empty Props
-  args: {
-    size: 52,
-    message: '페이지가 비어있습니다.',
-    className: '',
-  },
-  // custom docs setting
   argTypes: {
     size: {
       description: 'handle size of icon',
@@ -32,5 +20,14 @@ export const Base: StoryObj<typeof Empty> = {
     className: {
       description: 'custom style by adding Tailwind CSS className',
     },
+  },
+};
+export default meta;
+
+export const Base: StoryObj<typeof Empty> = {
+  args: {
+    size: 52,
+    message: '페이지가 비어있습니다.',
+    className: '',
   },
 };

@@ -2,15 +2,46 @@ import { Meta, StoryObj } from '@storybook/react';
 import useDialog from '../../../hooks/useDialog';
 import { Button } from '../../button';
 import { AlertInterface } from '../../../types/app';
+import { setIntroText } from '../../../utils/storybookDos';
 import Alert from './index';
+
+const DEMO_CODE = `
+import { useDialog } from '@reket/ui';
+
+const App = () => {
+  const dialog = useDialog();
+    
+  return (
+    <Button
+       text="Open Alert"
+       color="purple"
+       size="m"
+       option="filled"
+       onClick={() => {
+         dialog.alert({
+           title: "This is title",
+           content: "Write content...",
+           type: "confirm",
+           onOk: () => { /* handle OK */ },
+           onCancel: () => { /* handle Cancel */ },
+         });
+       }}
+    />
+  );
+};
+`;
 
 const meta: Meta<typeof Alert> = {
   title: 'Component/Alert',
   component: Alert,
   parameters: {
+    layout: 'centered',
     docs: {
+      source: {
+        code: DEMO_CODE,
+      },
       description: {
-        component: `Use this component with @reket/ui's custom hook, useDialog.`,
+        component: setIntroText('useDialog'),
       },
     },
   },
@@ -42,9 +73,10 @@ const AlertButton = ({ args }: { args: AlertInterface }) => {
   return (
     <div>
       <Button
-        text={args.type}
-        color="dark"
-        size="l"
+        text="Open Alert"
+        color="purple"
+        size="m"
+        option="filled"
         onClick={() => {
           alert({
             title: args.title,

@@ -1,24 +1,27 @@
 import { Meta, StoryObj } from '@storybook/react';
 import RadioGroup from './RadioGroup';
+import { setIntroText } from '../../utils/storybookDos';
 
 const meta: Meta<typeof RadioGroup> = {
   title: 'Component/RadioGroup',
   component: RadioGroup,
   parameters: {
     layout: 'centered',
-    componentSubtitle: 'RadioGroup Component',
     docs: {
       description: {
-        component: '@reket/ui',
+        component: setIntroText('RadioGroup'),
       },
     },
   },
-  tags: ['autodocs'], // automatically create docs
+  argTypes: {
+    isVertical: {
+      description: 'layout of RadioGroup',
+    },
+  },
 };
 export default meta;
 
 export const Base: StoryObj<typeof RadioGroup> = {
-  // default RadioGroup Props
   args: {
     value: '옵션1',
     options: [
@@ -27,11 +30,5 @@ export const Base: StoryObj<typeof RadioGroup> = {
       { value: '옵션3', label: '옵션3' },
     ],
     isVertical: true,
-  },
-  // custom docs setting
-  argTypes: {
-    isVertical: {
-      description: 'layout of RadioGroup',
-    },
   },
 };
