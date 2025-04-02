@@ -92,7 +92,7 @@ const AlertButton = ({ args }: { args: AlertInterface }) => {
 };
 
 export const Base: StoryObj<typeof Alert> = {
-  render: (args) => <AlertButton args={args} />,
+  render: (args: any) => <AlertButton args={args} />,
   args: {
     type: 'confirm',
     title: 'This is title',
