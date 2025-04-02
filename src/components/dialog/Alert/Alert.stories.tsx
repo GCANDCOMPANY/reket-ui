@@ -1,30 +1,42 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { UIProvider } from '../../../UIProvider';
 import useDialog from '../../../hooks/useDialog';
 import { Button } from '../../button';
-import Alert from './index';
 import { AlertInterface } from '../../../types/app';
+import Alert from './index';
 
-export default {
+const meta: Meta<typeof Alert> = {
   title: 'Component/Alert',
   component: Alert,
   parameters: {
     docs: {
       description: {
-        component: `You can use this component by using @reket/ui's custom hook, useDialog.`,
+        component: `Use this component with @reket/ui's custom hook, useDialog.`,
       },
     },
   },
-  decorators: [
-    (Story) => (
-      <UIProvider>
-        <Story />
-      </UIProvider>
-    ),
-  ],
-} satisfies Meta<typeof Alert>;
+  argTypes: {
+    type: {
+      control: 'radio',
+      options: ['confirm', 'success', 'error', 'info'],
+      description: 'Determine the icon style of the alert dialog.',
+      table: {
+        type: {
+          summary: 'confirm | success | error | info',
+        },
+      },
+    },
+    title: { control: 'text', description: 'Title of alert.' },
+    content: { control: 'text', description: 'Content of alert.' },
+    onOk: { action: 'ok clicked', description: `It runs when you click the '확인' button.` },
+    onCancel: {
+      action: 'cancel clicked',
+      description: `It runs when you click the '취소' button.`,
+    },
+  },
+};
+export default meta;
 
-const Template = ({ args }: { args: AlertInterface }) => {
+const AlertButton = ({ args }: { args: AlertInterface }) => {
   const { alert } = useDialog();
 
   return (
@@ -48,26 +60,7 @@ const Template = ({ args }: { args: AlertInterface }) => {
 };
 
 export const Base: StoryObj<typeof Alert> = {
-  render: (args) => <Template args={args} />,
-  argTypes: {
-    type: {
-      control: 'radio',
-      options: ['confirm', 'success', 'error', 'info'],
-      description: 'Determine the icon style of the alert dialog.',
-      table: {
-        type: {
-          summary: 'confirm | success | error | info',
-        },
-      },
-    },
-    title: { control: 'text', description: 'Title of alert.' },
-    content: { control: 'text', description: 'Content of alert.' },
-    onOk: { action: 'ok clicked', description: `It runs when you click the '확인' button.` },
-    onCancel: {
-      action: 'cancel clicked',
-      description: `It runs when you click the '취소' button.`,
-    },
-  },
+  render: (args) => <AlertButton args={args} />,
   args: {
     type: 'confirm',
     title: 'This is title',

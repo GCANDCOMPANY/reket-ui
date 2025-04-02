@@ -1,5 +1,7 @@
+import React from 'react';
 import type { Preview } from '@storybook/react';
 import '../src/styles/globals.scss';
+import { UIProvider } from '../src/UIProvider';
 
 const preview: Preview = {
   parameters: {
@@ -11,6 +13,13 @@ const preview: Preview = {
       },
     },
   },
+  decorators: [
+    (Story) => (
+      <UIProvider>
+        <Story />
+      </UIProvider>
+    ),
+  ],
 };
 
 export default preview;
