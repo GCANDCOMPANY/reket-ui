@@ -17,13 +17,7 @@ const Alert = () => {
   return isOpen
     ? createPortal(
         <div className="z-50 h-screen w-screen">
-          <div
-            className="fixed left-0 top-0 z-30 h-screen w-screen bg-black opacity-40"
-            onClick={() => {
-              if (onCancel) onCancel();
-              updateAlertState({ ...state.alert, isOpen: false });
-            }}
-          />
+          <div className="fixed left-0 top-0 z-30 h-screen w-screen bg-black opacity-40" />
           <div className="fixed left-[50%] top-[12%] z-40 min-w-[356px] max-w-[448px] translate-x-[-50%] transform animate-fadein rounded-lg border-1 border-[#f1f1f1] bg-white p-24 shadow">
             <div className="mb-32 flex-center">
               <Icon type={type} />
