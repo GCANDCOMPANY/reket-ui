@@ -13,18 +13,6 @@ const meta: Meta<typeof Button> = {
       },
     },
   },
-};
-export default meta;
-
-export const Base: StoryObj<typeof Button> = {
-  // default Button Props
-  args: {
-    text: 'Button',
-    option: 'outline',
-    display: 'inline',
-    color: 'gray',
-  },
-  // custom docs setting
   argTypes: {
     text: {
       description: 'button text',
@@ -71,5 +59,15 @@ export const Base: StoryObj<typeof Button> = {
     children: {
       description: 'add custom element inside the button element',
     },
+  },
+};
+export default meta;
+
+export const Base: StoryObj<typeof Button> = {
+  args: {
+    text: 'Button',
+    option: 'outline',
+    display: 'inline',
+    color: 'gray',
   },
 };

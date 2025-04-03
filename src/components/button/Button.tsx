@@ -13,7 +13,7 @@ interface Props {
 }
 
 const Button = ({
-  text,
+  text = 'Button',
   option = 'outline',
   color = 'gray',
   size = 's',
