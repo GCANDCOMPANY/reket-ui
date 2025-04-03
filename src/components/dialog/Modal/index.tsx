@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { mergeStyle } from '../../../utils/style';
 
@@ -10,7 +10,6 @@ interface ModalProps {
   className?: Tailwind.ClassNames;
 }
 
-// TODO: max-width랑 max-height 설정 필요. 지금은 children 넣는대로 w,h 제멋대로 조절됨
 const Modal = ({
   isOpen,
   children,
@@ -18,6 +17,11 @@ const Modal = ({
   onClose,
   className,
 }: ModalProps): JSX.Element | null => {
+  const modalContentStyle = mergeStyle(
+    `absolute left-[50%] z-10 max-h-[80vh] translate-x-[-50%] transform overflow-auto rounded-lg bg-white p-32 shadow transition-transform max-md:bottom-0 max-md:w-full md:top-[50%] md:min-w-[448px] md:translate-y-[-50%]`,
+    className,
+  );
+
   useEffect(() => {
     if (isOpen) document.body.style.overflow = 'hidden';
     else document.body.style.overflow = 'auto';
@@ -26,14 +30,7 @@ const Modal = ({
   return isOpen
     ? createPortal(
         <div className="fixed left-0 top-0 z-50 h-screen w-screen">
-          <div
-            className={mergeStyle(
-              `absolute left-[50%] z-10 translate-x-[-50%] transform rounded-lg bg-white p-32 shadow transition-transform  max-md:bottom-0 max-md:w-full md:top-[50%] md:min-w-[448px] md:translate-y-[-50%]`,
-              className,
-            )}
-          >
-            {children}
-          </div>
+          <div className={modalContentStyle}>{children}</div>
           {backdrop ? (
             <div className="h-full w-full bg-black bg-opacity-20" onClick={onClose} />
           ) : null}
