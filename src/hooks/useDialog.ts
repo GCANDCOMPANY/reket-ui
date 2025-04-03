@@ -1,8 +1,8 @@
 import { useUIContext } from '../UIProvider';
-import { AlertInterface } from '../types/app';
+import { AlertInterface, ToastInterface } from '../types/app';
 
 const useDialog = () => {
-  const { updateAlertState } = useUIContext();
+  const { updateAlertState, updateToastState } = useUIContext();
 
   const alert = ({ type = 'confirm', onCancel, onOk, title = '', content }: AlertInterface) => {
     updateAlertState({
@@ -15,7 +15,14 @@ const useDialog = () => {
     });
   };
 
-  const toast = () => {};
+  const toast = ({ type = 'success', title = '', content }: ToastInterface) => {
+    updateToastState({
+      isOpen: true,
+      type,
+      title,
+      content,
+    });
+  };
 
   return {
     alert,

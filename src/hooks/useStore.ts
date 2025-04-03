@@ -8,6 +8,12 @@ export const initialState: StateInterface = {
     type: 'confirm',
     isOpen: false,
   },
+  toast: {
+    title: '',
+    content: '',
+    type: 'success',
+    isOpen: false,
+  },
 };
 
 const reducer = (state: StateInterface, action: ActionInterface) => {
@@ -18,6 +24,14 @@ const reducer = (state: StateInterface, action: ActionInterface) => {
         alert: {
           ...state.alert,
           ...action.payload.alert,
+        },
+      };
+    case 'UPDATE_TOAST':
+      return {
+        ...state,
+        toast: {
+          ...state.toast,
+          ...action.payload.toast,
         },
       };
     default:

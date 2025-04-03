@@ -1,11 +1,12 @@
 import { createContext, useContext, useMemo, useCallback, useEffect } from 'react';
-import { Alert } from './components/dialog';
-import { AlertInterface, StateInterface } from './types/app';
+import { Alert, Toast } from './components/dialog';
+import { AlertInterface, StateInterface, ToastInterface } from './types/app';
 import { useStore } from './hooks/useStore';
 
 interface UIContextInterface {
   state: StateInterface;
   updateAlertState: (alertState: AlertInterface) => void;
+  updateToastState: (toastState: ToastInterface) => void;
 }
 
 const UIContext = createContext<UIContextInterface | null>(null);
@@ -20,7 +21,17 @@ export const UIProvider = ({ children }: { children: JSX.Element }): JSX.Element
     [dispatch, state],
   );
 
-  const uiContextProviderValue = useMemo(() => ({ state, updateAlertState }), [state]);
+  const updateToastState = useCallback(
+    (toastState: ToastInterface) => {
+      dispatch({ type: 'UPDATE_TOAST', payload: { ...state, toast: toastState } });
+    },
+    [dispatch, state],
+  );
+
+  const uiContextProviderValue = useMemo(
+    () => ({ state, updateAlertState, updateToastState }),
+    [state],
+  );
 
   useEffect(() => {
     const portalRoot = document.createElement('div');
@@ -36,6 +47,7 @@ export const UIProvider = ({ children }: { children: JSX.Element }): JSX.Element
     <UIContext.Provider value={uiContextProviderValue}>
       {children}
       <Alert />
+      <Toast />
     </UIContext.Provider>
   );
 };
