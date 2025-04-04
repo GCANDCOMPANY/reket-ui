@@ -6,7 +6,6 @@ const meta: Meta<typeof TextArea> = {
   title: 'Component/TextArea',
   component: TextArea,
   parameters: {
-    layout: 'centered',
     docs: {
       description: {
         component: setIntroText('TextArea'),
@@ -14,8 +13,11 @@ const meta: Meta<typeof TextArea> = {
     },
   },
   argTypes: {
+    maxLength: {
+      description: 'Limit the length of the input text.',
+    },
     className: {
-      description: 'custom style by adding Tailwind CSS className',
+      description: 'Custom styles applied using Tailwind CSS classes.',
     },
   },
 };

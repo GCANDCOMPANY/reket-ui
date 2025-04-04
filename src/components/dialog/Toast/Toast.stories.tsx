@@ -1,12 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react';
 import useDialog from '../../../hooks/useDialog';
 import { Button } from '../../button';
-import { AlertInterface, ToastInterface } from '../../../types/app';
+import { ToastInterface } from '../../../types/app';
 import { setIntroText } from '../../../utils/storybookDos';
 import Toast from '.';
-
-const DEMO_CODE = `
-`;
 
 const meta: Meta<typeof Toast> = {
   title: 'Component/Toast',
@@ -14,15 +11,23 @@ const meta: Meta<typeof Toast> = {
   parameters: {
     layout: 'centered',
     docs: {
-      source: {
-        code: DEMO_CODE,
-      },
       description: {
         component: setIntroText('useDialog'),
       },
     },
   },
-  argTypes: {},
+  argTypes: {
+    type: {
+      control: 'inline-radio',
+      options: ['success', 'error', 'warn', 'info'],
+      description: 'Determine color of toast',
+      table: {
+        type: {
+          summary: 'success | error | warn| info',
+        },
+      },
+    },
+  },
 };
 export default meta;
 
@@ -33,14 +38,14 @@ const ToastButton = ({ args }: { args: ToastInterface }) => {
     <div>
       <Button
         text="Open Toast"
-        color="purple"
+        color="dark"
         size="m"
         option="filled"
         onClick={() => {
           toast({
-            title: 'title',
-            content: 'content',
-            type: 'info',
+            title: args.title,
+            content: args.content,
+            type: args.type,
           });
         }}
       />
@@ -50,5 +55,9 @@ const ToastButton = ({ args }: { args: ToastInterface }) => {
 
 export const Base: StoryObj<typeof Toast> = {
   render: (args: any) => <ToastButton args={args} />,
-  args: {},
+  args: {
+    title: 'Title',
+    content: 'content',
+    type: 'success',
+  },
 };

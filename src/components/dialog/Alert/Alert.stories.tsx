@@ -47,7 +47,7 @@ const meta: Meta<typeof Alert> = {
   },
   argTypes: {
     type: {
-      control: 'radio',
+      control: 'inline-radio',
       options: ['confirm', 'success', 'error', 'info'],
       description: 'Determine the icon style of the alert dialog.',
       table: {

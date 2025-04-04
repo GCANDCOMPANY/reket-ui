@@ -17,7 +17,7 @@ interface Props {
 }
 
 const Select = ({
-  placeholder = '선택',
+  placeholder = 'select',
   defaultOption = null,
   options,
   className,
