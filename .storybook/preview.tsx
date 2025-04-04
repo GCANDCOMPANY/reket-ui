@@ -12,6 +12,11 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    options: {
+      storySort: {
+        order: ['WELCOME', ['Intro', 'Color Palette'], 'Component', 'Hooks'],
+      },
+    },
   },
   decorators: [
     (Story) => (
