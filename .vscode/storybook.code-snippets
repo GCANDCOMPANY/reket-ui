@@ -1,6 +1,6 @@
 {
   "Storybook Template(Component)": {
-    "prefix": "sb-component",
+    "prefix": "storybook",
     "body": [
       "import type { Meta, StoryObj } from '@storybook/react';",
       "",
