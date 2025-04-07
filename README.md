@@ -41,8 +41,8 @@ const YourComponent = () => {
 To create a Storybook file quickly, you can use this snippet:
 
 1. Make a new file called `YourComponent.stories.tsx`.
-2. In that file, write `storybook`.
-3. The code below will be added to the file automatically:
+2. In that file, write "storybook".
+3. Then, the code below will be added to the file automatically:
 
 ```tsx
 import type { Meta, StoryObj } from '@storybook/react';
