@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import Input from './Input';
-import { setIntroText } from '../../utils/storybookDos';
+import { generateDocsIntro } from '../../utils/storybook/docsHelper';
 
 const meta: Meta<typeof Input> = {
   title: 'Component/Input',
@@ -9,7 +9,7 @@ const meta: Meta<typeof Input> = {
     layout: 'centered',
     docs: {
       description: {
-        component: setIntroText('Input'),
+        component: generateDocsIntro('Input'),
       },
     },
   },

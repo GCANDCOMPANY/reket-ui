@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import Loading from './Loading';
-import { setIntroText } from '../../utils/storybookDos';
+import { generateDocsIntro } from '../../utils/storybook/docsHelper';
 
 const meta: Meta<typeof Loading> = {
   title: 'Component/Loading',
@@ -9,7 +9,7 @@ const meta: Meta<typeof Loading> = {
     layout: 'centered',
     docs: {
       description: {
-        component: setIntroText('Loading'),
+        component: generateDocsIntro('Loading'),
       },
     },
   },

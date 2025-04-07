@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import Select from './Select';
-import { setIntroText } from '../../utils/storybookDos';
+import { generateDocsIntro } from '../../utils/storybook/docsHelper';
 
 const meta: Meta<typeof Select> = {
   title: 'Component/Select',
@@ -12,7 +12,7 @@ const meta: Meta<typeof Select> = {
         iframeHeight: 220,
       },
       description: {
-        component: setIntroText('Select'),
+        component: generateDocsIntro('Select'),
       },
     },
   },

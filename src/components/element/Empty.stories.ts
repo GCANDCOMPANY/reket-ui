@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import Empty from './Empty';
-import { setIntroText } from '../../utils/storybookDos';
+import { generateDocsIntro } from '../../utils/storybook/docsHelper';
 
 const meta: Meta<typeof Empty> = {
   title: 'Component/Empty',
@@ -9,7 +9,7 @@ const meta: Meta<typeof Empty> = {
     layout: 'centered',
     docs: {
       description: {
-        component: setIntroText('Empty'),
+        component: generateDocsIntro('Empty'),
       },
     },
   },

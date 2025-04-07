@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import Modal from '.';
-import { setIntroText } from '../../../utils/storybookDos';
+import { generateDocsIntro } from '../../../utils/storybook/docsHelper';
 import { Button } from '../../button';
 import { useState } from 'react';
 
@@ -38,7 +38,7 @@ const meta: Meta<typeof Modal> = {
         code: DEMO_CODE,
       },
       description: {
-        component: setIntroText('Modal'),
+        component: generateDocsIntro('Modal'),
       },
     },
   },

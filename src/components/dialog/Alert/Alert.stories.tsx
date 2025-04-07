@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import useDialog from '../../../hooks/useDialog';
 import { Button } from '../../button';
 import { AlertInterface } from '../../../types/app';
-import { setIntroText } from '../../../utils/storybookDos';
+import { generateDocsIntro } from '../../../utils/storybook/docsHelper';
 import Alert from './index';
 
 const DEMO_CODE = `
@@ -41,7 +41,7 @@ const meta: Meta<typeof Alert> = {
         code: DEMO_CODE,
       },
       description: {
-        component: setIntroText('useDialog'),
+        component: generateDocsIntro('useDialog'),
       },
     },
   },

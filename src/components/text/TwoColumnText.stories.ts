@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import TwoColumnText from './TwoColumnText';
-import { setIntroText } from '../../utils/storybookDos';
+import { generateDocsIntro } from '../../utils/storybook/docsHelper';
 
 const meta: Meta<typeof TwoColumnText> = {
   title: 'Component/TwoColumnText',
@@ -9,7 +9,7 @@ const meta: Meta<typeof TwoColumnText> = {
     layout: 'centered',
     docs: {
       description: {
-        component: setIntroText('TwoColumnText'),
+        component: generateDocsIntro('TwoColumnText'),
       },
     },
   },

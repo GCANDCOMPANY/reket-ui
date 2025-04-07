@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import RadioGroup from './RadioGroup';
-import { setIntroText } from '../../utils/storybookDos';
+import { generateDocsIntro } from '../../utils/storybook/docsHelper';
 
 const meta: Meta<typeof RadioGroup> = {
   title: 'Component/RadioGroup',
@@ -9,7 +9,7 @@ const meta: Meta<typeof RadioGroup> = {
     layout: 'centered',
     docs: {
       description: {
-        component: setIntroText('RadioGroup'),
+        component: generateDocsIntro('RadioGroup'),
       },
     },
   },

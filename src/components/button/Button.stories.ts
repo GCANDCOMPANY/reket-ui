@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import Button from './Button';
-import { setIntroText } from '../../utils/storybookDos';
+import { generateDocsIntro } from '../../utils/storybook/docsHelper';
 
 const meta: Meta<typeof Button> = {
   title: 'Component/Button',
@@ -9,7 +9,7 @@ const meta: Meta<typeof Button> = {
     layout: 'centered',
     docs: {
       description: {
-        component: setIntroText('Button'),
+        component: generateDocsIntro('Button'),
       },
     },
   },

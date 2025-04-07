@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import useDialog from '../../../hooks/useDialog';
 import { Button } from '../../button';
 import { ToastInterface } from '../../../types/app';
-import { setIntroText } from '../../../utils/storybookDos';
+import { generateDocsIntro } from '../../../utils/storybook/docsHelper';
 import Toast from '.';
 
 const meta: Meta<typeof Toast> = {
@@ -12,7 +12,7 @@ const meta: Meta<typeof Toast> = {
     layout: 'centered',
     docs: {
       description: {
-        component: setIntroText('useDialog'),
+        component: generateDocsIntro('useDialog'),
       },
     },
   },
