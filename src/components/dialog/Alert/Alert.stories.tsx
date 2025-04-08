@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import useDialog from '../../../hooks/useDialog';
-import { Button } from '../../controls';
+import { Button } from '../../element';
 import { AlertInterface } from '../../../types/app';
 import { generateDocsIntro } from '../../../utils/storybook/docsHelper';
 import Alert from './index';
