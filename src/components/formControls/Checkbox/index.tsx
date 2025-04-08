@@ -1,6 +1,6 @@
 import { IoCheckbox } from '@react-icons/all-files/io5/IoCheckbox';
-import { colors } from '../../constants';
-import { mergeStyle } from '../../utils/style';
+import { colors } from '../../../constants';
+import { mergeStyle } from '../../../utils/style';
 
 interface Props {
   label?: string;

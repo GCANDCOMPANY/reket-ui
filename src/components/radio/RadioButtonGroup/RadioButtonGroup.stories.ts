@@ -1,27 +1,27 @@
 import { Meta, StoryObj } from '@storybook/react';
-import RadioGroup from './RadioGroup';
-import { generateDocsIntro } from '../../utils/storybook/docsHelper';
+import RadioButtonGroup from '.';
+import { generateDocsIntro } from '../../../utils/storybook/docsHelper';
 
-const meta: Meta<typeof RadioGroup> = {
-  title: 'Component/RadioGroup',
-  component: RadioGroup,
+const meta: Meta<typeof RadioButtonGroup> = {
+  title: 'Component/RadioButtonGroup',
+  component: RadioButtonGroup,
   parameters: {
     layout: 'centered',
     docs: {
       description: {
-        component: generateDocsIntro('RadioGroup'),
+        component: generateDocsIntro('RadioButtonGroup'),
       },
     },
   },
   argTypes: {
     isVertical: {
-      description: 'layout of RadioGroup',
+      description: 'layout of RadioButtonGroup',
     },
   },
 };
 export default meta;
 
-export const Base: StoryObj<typeof RadioGroup> = {
+export const Base: StoryObj<typeof RadioButtonGroup> = {
   args: {
     value: '옵션1',
     options: [

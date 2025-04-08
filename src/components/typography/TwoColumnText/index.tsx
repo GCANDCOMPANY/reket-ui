@@ -1,4 +1,4 @@
-import { mergeStyle } from '../../utils/style';
+import { mergeStyle } from '../../../utils/style';
 
 interface Props {
   fontSize?: number;

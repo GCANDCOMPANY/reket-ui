@@ -1,6 +1,6 @@
 import React from 'react';
-import { mergeStyle } from '../../utils/style';
-import InputLabel from './InputLabel';
+import { mergeStyle } from '../../../utils/style';
+import InputLabel from '../InputLabel';
 
 interface Props {
   name?: string;

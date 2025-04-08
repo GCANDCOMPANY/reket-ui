@@ -1,4 +1,4 @@
-import Radio from './Radio';
+import RadioButton from '../RadioButton';
 
 interface Option {
   value?: string | number;
@@ -12,11 +12,11 @@ interface Props {
   isVertical?: boolean;
 }
 
-const RadioGroup = ({ value, options, onChange, isVertical = true }: Props) => {
+const RadioButtonGroup = ({ value, options, onChange, isVertical = true }: Props) => {
   return (
     <div className={`${!isVertical && 'flex'} flex-wrap`}>
       {options?.map((option) => (
-        <Radio
+        <RadioButton
           key={option.value}
           isChecked={option.value === value}
           label={option.label}
@@ -29,4 +29,4 @@ const RadioGroup = ({ value, options, onChange, isVertical = true }: Props) => {
   );
 };
 
-export default RadioGroup;
+export default RadioButtonGroup;

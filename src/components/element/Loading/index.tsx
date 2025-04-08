@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { AiOutlineLoading3Quarters } from '@react-icons/all-files/ai/AiOutlineLoading3Quarters';
-import { mergeStyle } from '../../utils/style';
+import { mergeStyle } from '../../../utils/style';
 
 interface Props extends React.ComponentProps<'div'> {
   isLoading?: boolean;

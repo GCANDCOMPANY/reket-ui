@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Loading from './Loading';
-import { generateDocsIntro } from '../../utils/storybook/docsHelper';
+import Loading from '.';
+import { generateDocsIntro } from '../../../utils/storybook/docsHelper';
 
 const meta: Meta<typeof Loading> = {
   title: 'Component/Loading',

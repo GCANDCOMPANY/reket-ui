@@ -1,5 +1,5 @@
-import React, { HTMLProps } from 'react';
-import { mergeStyle } from '../../utils/style';
+import React from 'react';
+import { mergeStyle } from '../../../utils/style';
 
 interface Props {
   text?: string;

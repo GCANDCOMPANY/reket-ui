@@ -14,11 +14,10 @@
 
 import './styles/globals.scss';
 
-export * from './components/button';
 export * from './components/dialog';
 export * from './components/element';
-export * from './components/input';
+export * from './components/formControls';
 export * from './components/radio';
-export * from './components/text';
+export * from './components/typography';
 export * from './UIProvider';
 export * from './hooks';

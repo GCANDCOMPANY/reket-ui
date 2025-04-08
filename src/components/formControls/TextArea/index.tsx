@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { mergeStyle } from '../../utils/style';
+import { mergeStyle } from '../../../utils/style';
 
 interface Props {
   maxLength?: number;

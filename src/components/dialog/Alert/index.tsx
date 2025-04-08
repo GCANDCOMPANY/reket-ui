@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
 import { useUIContext } from '../../../UIProvider';
-import { Button } from '../../button';
+import { Button } from '../../controls';
 import Icon from './Icon';
 
 const Alert = () => {

@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import Modal from '.';
 import { generateDocsIntro } from '../../../utils/storybook/docsHelper';
-import { Button } from '../../button';
+import { Button } from '../../controls';
 import { useState } from 'react';
 
 const DEMO_CODE = `

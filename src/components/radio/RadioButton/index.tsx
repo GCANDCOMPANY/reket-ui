@@ -1,8 +1,8 @@
 import { RiRadioButtonFill } from '@react-icons/all-files/ri/RiRadioButtonFill';
 import { IoMdRadioButtonOff } from '@react-icons/all-files/io/IoMdRadioButtonOff';
 
-import { colors } from '../../constants';
-import { mergeStyle } from '../../utils/style';
+import { colors } from '../../../constants';
+import { mergeStyle } from '../../../utils/style';
 
 interface Props {
   label?: string;
@@ -12,7 +12,7 @@ interface Props {
   className?: Tailwind.ClassNames;
 }
 
-const Radio = ({ label, isChecked = false, size = 20, onClick, className }: Props) => {
+const RadioButton = ({ label, isChecked = false, size = 20, onClick, className }: Props) => {
   const containerStyle = mergeStyle('flex items-center cursor-pointer py-8', className);
 
   return (
@@ -32,4 +32,4 @@ const Radio = ({ label, isChecked = false, size = 20, onClick, className }: Prop
   );
 };
 
-export default Radio;
+export default RadioButton;

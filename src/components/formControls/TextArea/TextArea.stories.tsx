@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import TextArea from './TextArea';
-import { generateDocsIntro } from '../../utils/storybook/docsHelper';
+import TextArea from '.';
+import { generateDocsIntro } from '../../../utils/storybook/docsHelper';
 
 const meta: Meta<typeof TextArea> = {
   component: TextArea,

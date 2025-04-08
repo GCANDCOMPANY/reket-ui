@@ -1,5 +1,5 @@
 import { IoIosInformationCircleOutline } from '@react-icons/all-files/io/IoIosInformationCircleOutline';
-import { mergeStyle } from '../../utils/style';
+import { mergeStyle } from '../../../utils/style';
 
 interface Props {
   size?: number;

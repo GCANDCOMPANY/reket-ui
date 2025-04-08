@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Empty from './Empty';
-import { generateDocsIntro } from '../../utils/storybook/docsHelper';
+import Empty from '.';
+import { generateDocsIntro } from '../../../utils/storybook/docsHelper';
 
 const meta: Meta<typeof Empty> = {
   title: 'Component/Empty',

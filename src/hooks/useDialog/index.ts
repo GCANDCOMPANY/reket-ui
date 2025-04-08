@@ -1,5 +1,5 @@
-import { useUIContext } from '../UIProvider';
-import { AlertInterface, ToastInterface } from '../types/app';
+import { useUIContext } from '../../UIProvider';
+import { AlertInterface, ToastInterface } from '../../types/app';
 
 const useDialog = () => {
   const { updateAlertState, updateToastState } = useUIContext();

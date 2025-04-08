@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Input from './Input';
-import { generateDocsIntro } from '../../utils/storybook/docsHelper';
+import Input from '.';
+import { generateDocsIntro } from '../../../utils/storybook/docsHelper';
 
 const meta: Meta<typeof Input> = {
   title: 'Component/Input',

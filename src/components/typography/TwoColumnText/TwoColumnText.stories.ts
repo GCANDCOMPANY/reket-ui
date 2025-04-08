@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import TwoColumnText from './TwoColumnText';
-import { generateDocsIntro } from '../../utils/storybook/docsHelper';
+import TwoColumnText from '.';
+import { generateDocsIntro } from '../../../utils/storybook/docsHelper';
 
 const meta: Meta<typeof TwoColumnText> = {
   title: 'Component/TwoColumnText',

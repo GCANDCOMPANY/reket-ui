@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Select from './Select';
-import { generateDocsIntro } from '../../utils/storybook/docsHelper';
+import Select from '.';
+import { generateDocsIntro } from '../../../utils/storybook/docsHelper';
 
 const meta: Meta<typeof Select> = {
   title: 'Component/Select',
