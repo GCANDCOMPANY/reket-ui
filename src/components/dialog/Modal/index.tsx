@@ -18,7 +18,7 @@ const Modal = ({
   className,
 }: ModalProps): JSX.Element | null => {
   const modalContentStyle = mergeStyle(
-    `absolute left-[50%] z-10 max-h-[80vh] translate-x-[-50%] transform overflow-auto rounded-lg bg-white p-32 shadow transition-transform max-md:bottom-0 max-md:w-full md:top-[50%] md:min-w-[448px] md:translate-y-[-50%]`,
+    `absolute left-[50%] z-10 max-h-[80vh] translate-x-[-50%] transform overflow-auto rounded-lg bg-white p-16 shadow transition-transform max-md:bottom-0 max-md:w-full md:top-[50%] md:min-w-[448px] md:translate-y-[-50%]`,
     className,
   );
 

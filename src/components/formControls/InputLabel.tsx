@@ -7,7 +7,7 @@ interface Props {
 }
 
 const InputLabel = ({ label, required, className }: Props): JSX.Element => {
-  const style = mergeStyle('w-80 text-16 font-medium text-dark-6', className);
+  const style = mergeStyle('w-80 text-15 font-medium text-dark-6', className);
 
   return (
     <label className={style}>

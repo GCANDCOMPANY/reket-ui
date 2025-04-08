@@ -2,7 +2,7 @@ import { mergeStyle } from '../../../utils/style';
 import InputLabel from '../InputLabel';
 
 interface Props {
-  value?: number;
+  value?: number | string;
   label?: string;
   required?: boolean;
   className?: Tailwind.ClassNames;
