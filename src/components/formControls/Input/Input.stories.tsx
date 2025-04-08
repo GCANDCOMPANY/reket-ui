@@ -15,7 +15,7 @@ const meta: Meta<typeof Input> = {
   },
   argTypes: {
     className: {
-      description: 'custom style by adding Tailwind CSS className',
+      description: 'Custom styles applied using Tailwind CSS classes.',
     },
   },
 };

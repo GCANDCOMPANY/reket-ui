@@ -45,7 +45,7 @@ const meta: Meta<typeof Modal> = {
   argTypes: {
     isOpen: { description: 'handle Modal openable' },
     className: {
-      description: 'custom style by adding Tailwind CSS className',
+      description: 'Custom styles applied using Tailwind CSS classes.',
     },
     children: {
       description: 'add custom element inside the button element',

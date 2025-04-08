@@ -18,7 +18,7 @@ const meta: Meta<typeof Empty> = {
       description: 'handle size of icon',
     },
     className: {
-      description: 'custom style by adding Tailwind CSS className',
+      description: 'Custom styles applied using Tailwind CSS classes.',
     },
   },
 };

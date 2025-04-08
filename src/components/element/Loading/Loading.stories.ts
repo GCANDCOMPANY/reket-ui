@@ -15,7 +15,7 @@ const meta: Meta<typeof Loading> = {
   },
   argTypes: {
     className: {
-      description: 'custom style by adding Tailwind CSS className',
+      description: 'Custom styles applied using Tailwind CSS classes.',
     },
   },
 };

@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import InputNumber from '.';
 import { generateDocsIntro } from '../../../utils/storybook/docsHelper';
-// Update the import path based on this component's location
 
 const meta: Meta<typeof InputNumber> = {
   component: InputNumber,
@@ -13,12 +12,25 @@ const meta: Meta<typeof InputNumber> = {
       },
     },
   },
-  argTypes: {},
+  argTypes: {
+    placeholder: {
+      description: `Text displayed when the 'value' prop is not set.`,
+    },
+    className: {
+      description: 'Custom styles applied using Tailwind CSS classes.',
+    },
+  },
 };
 export default meta;
 
 type Story = StoryObj<typeof InputNumber>;
 
 export const Default: Story = {
-  args: {},
+  args: {
+    label: 'number',
+    required: true,
+    className: '',
+    placeholder: '0',
+    maxLength: 5,
+  },
 };

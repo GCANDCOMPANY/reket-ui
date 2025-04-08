@@ -18,7 +18,7 @@ const meta: Meta<typeof TwoColumnText> = {
       description: 'set all of the font size',
     },
     className: {
-      description: 'custom style by adding Tailwind CSS className',
+      description: 'Custom styles applied using Tailwind CSS classes.',
     },
   },
 };
