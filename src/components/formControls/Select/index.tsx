@@ -66,7 +66,7 @@ const Select = ({
       </button>
 
       {isOpen && (
-        <ul className="absolute z-40 mt-2 flex max-h-200 w-full animate-fadein flex-col overflow-y-scroll rounded-lg border-1 border-gray-1 bg-white p-4 shadow-lg">
+        <ul className="absolute z-40 mt-2 flex max-h-220 w-full animate-fadein flex-col overflow-y-scroll rounded-lg border-[1px] border-gray-1 bg-white p-4 shadow-lg">
           {options.map((option) => {
             const optionKey = typeof option === 'string' ? option : option.value;
             const optionLabel = typeof option === 'string' ? option : option.label;
