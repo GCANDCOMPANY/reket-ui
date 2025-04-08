@@ -13,12 +13,22 @@ const meta: Meta<typeof TextArea> = {
       },
     },
   },
-  argTypes: {},
+  argTypes: {
+    maxLength: {
+      description: '',
+    },
+    className: {
+      description: 'Custom styles applied using Tailwind CSS classes.',
+    },
+  },
 };
 export default meta;
 
 type Story = StoryObj<typeof TextArea>;
 
 export const Default: Story = {
-  args: {},
+  args: {
+    maxLength: 20,
+    className: '',
+  },
 };
