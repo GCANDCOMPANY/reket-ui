@@ -9,7 +9,7 @@ interface Props {
   display?: 'block' | 'inline';
   onClick?: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void | Promise<void>;
   className?: Tailwind.ClassNames;
-  children?: JSX.Element;
+  children?: JSX.Element | JSX.Element[];
 }
 
 const Button = ({
