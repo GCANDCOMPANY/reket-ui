@@ -1,3 +1,3 @@
 // eslint-disable-next-line import/prefer-default-export
-export { default as RadioButtonGroup } from './RadioGroup';
-export { default as RadioButton } from './Radio';
+export { default as RadioGroup } from './RadioGroup';
+export { default as Radio } from './Radio';
