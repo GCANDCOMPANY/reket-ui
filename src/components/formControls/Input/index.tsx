@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { InputHTMLAttributes } from 'react';
 import { mergeStyle } from '../../../utils/style';
 import InputLabel from '../InputLabel';
 
-interface Props {
+interface Props extends InputHTMLAttributes<HTMLInputElement> {
   name?: string;
   value?: string | number;
   required?: boolean;
