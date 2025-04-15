@@ -1,12 +1,13 @@
-import { useState } from 'react';
-import Button from './components/button/Button';
+import React, { useState } from 'react';
+import { Modal } from './components/dialog';
+import Button from './components/element/Button';
 import { useDialog } from './hooks';
 import {
   // Loading,
   Empty,
 } from './components/element';
-import { Input, Select, InputNumber, TextArea, Checkbox } from './components/input';
-import { TwoColumnText } from './components/text';
+import { Input, Select, InputNumber, TextArea, Checkbox } from './components/formControls';
+import { TwoColumnText, Heading } from './components/typography';
 import RadioGroup from './components/radio/RadioGroup';
 
 const App = () => {
@@ -14,26 +15,53 @@ const App = () => {
   const [isChecked, setIsChecked] = useState(false);
   const [radio, setRadio] = useState<string | number>('option_1');
   const [inputValue, setInputValue] = useState('기본값');
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <div className="w-screen p-16">
+      <Heading>hi1</Heading>
+      <Heading level={2}>hi2</Heading>
+      <Heading level={3} className="bg-primary">
+        hi3
+      </Heading>
       <div className="mb-16">
         <Button
-          text="테스트 버튼"
+          text="alert test 2"
           size="l"
-          display="block"
-          color="dark"
-          className="mt-20"
+          className="mr-15 mt-2 bg-black"
           onClick={() => {
             dialog.alert({
-              type: 'info',
-              title: '제목',
+              type: 'error',
+              title: '제목2',
+              content: '내용입니다.',
+            });
+          }}
+        />
+        <Button
+          text="modal test 1"
+          size="l"
+          color="purple"
+          className="mr-15 mt-20"
+          onClick={() => {
+            setIsModalOpen(true);
+          }}
+        />
+        <Button
+          text="toast test 1"
+          size="l"
+          color="red"
+          className="mr-15 mt-20"
+          onClick={() => {
+            dialog.toast({
+              type: 'warn',
+              title: '제목2',
               content: '내용입니다.',
             });
           }}
         />
         <Empty message="장바구니가 비어있어요." />
         <form
+          className="mb-20"
           onSubmit={(e) => {
             e.preventDefault();
 
@@ -53,17 +81,19 @@ const App = () => {
             className="mb-16"
           />
           <Input name="배송지2" label="배송지2" className="mb-16" />
-          <button type="submit">제출하깅</button>
+          <Button type="submit">제출</Button>
         </form>
         <InputNumber label="숫자만썽" required className="mb-16" />
         <Select
-          options={[
-            { value: '테스트1', label: '테스트1' },
-            { value: '테스트2', label: '테스트2' },
-            { value: '테스트3', label: '테스트3' },
-            { value: '테스트4', label: '테스트4' },
-            { value: '테스트5', label: '테스트5' },
-          ]}
+          // options={[
+          //   { value: '테스트1', label: '테스트1' },
+          //   { value: '테스트2', label: '테스트2' },
+          //   { value: '테스트3', label: '테스트3' },
+          //   { value: '테스트4', label: '테스트4' },
+          //   { value: '테스트5', label: '테스트5' },
+          // ]}
+          defaultOption={'테스트3'}
+          options={['테스트1', '테스트2', '테스트3', '테스트4', '테스트5']}
           className="mb-16"
         />
         <TextArea maxLength={100} className="mb-16" />
@@ -79,7 +109,7 @@ const App = () => {
         <TwoColumnText label="배송비" textBold text="-33,600원" />
         <TwoColumnText label="배송비" textBold text="-33,600원" />
         <Checkbox
-          label="품절제외"
+          label="품절제외1"
           isChecked={isChecked}
           onClick={() => {
             setIsChecked((prev) => !prev);
@@ -98,7 +128,17 @@ const App = () => {
           ]}
           isVertical
         />
-        {/* <Loading overlay isFixed={false} /> */}
+        <Modal
+          isOpen={isModalOpen}
+          onClose={() => {
+            setIsModalOpen(false);
+          }}
+        >
+          <h2>Title</h2>
+          <p className="bg-primary">
+            어쩌구저쩌구어쩌구저쩌구어쩌구저쩌구어쩌구저쩌구어쩌구저쩌구어쩌구저쩌구어쩌구저쩌구어쩌구저쩌구어쩌구저쩌구어쩌구저쩌구어쩌구저쩌구어쩌구저쩌구v
+          </p>
+        </Modal>
       </div>
     </div>
   );
