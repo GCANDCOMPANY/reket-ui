@@ -12,7 +12,7 @@ interface Props {
   className?: Tailwind.ClassNames;
 }
 
-const RadioButton = ({ label, isChecked = false, size = 20, onClick, className }: Props) => {
+const Radio = ({ label, isChecked = false, size = 20, onClick, className }: Props) => {
   const containerStyle = mergeStyle('flex items-center cursor-pointer py-8', className);
 
   return (
@@ -32,4 +32,4 @@ const RadioButton = ({ label, isChecked = false, size = 20, onClick, className }
   );
 };
 
-export default RadioButton;
+export default Radio;

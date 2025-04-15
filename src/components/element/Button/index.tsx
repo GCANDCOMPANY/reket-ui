@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 import { mergeStyle } from '../../../utils/style';
 
-interface Props {
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   text?: string;
   option?: 'filled' | 'outline';
   color?: 'dark' | 'purple' | 'red' | 'gray';
@@ -9,7 +9,7 @@ interface Props {
   display?: 'block' | 'inline';
   onClick?: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void | Promise<void>;
   className?: Tailwind.ClassNames;
-  children?: JSX.Element | JSX.Element[];
+  children?: string | JSX.Element | JSX.Element[];
 }
 
 const Button = ({
